@@ -368,6 +368,199 @@ def skills():
     console.print(table)
 
 
+# ============================================================================
+# SCORING COMMANDS
+# ============================================================================
+
+# Mode explanations derived from scoring_spec.yml
+MODE_EXPLANATIONS = {
+    "cut": """[bold cyan]CUT Mode[/] - Optimized for cutting/weight loss
+  [dim]Weights:[/] Protein per 100kcal (40%) + Leucine (30%) + Protein% (20%) + EAAs% (10%)
+  [dim]Penalties:[/] High sodium (-10%), High non-protein macros (-15%)
+  [dim]Hard reject:[/] Protein <18g per 100kcal, Leucine <2.2g per serving""",
+    
+    "bulk": """[bold cyan]BULK Mode[/] - Optimized for muscle building
+  [dim]Weights:[/] Protein% (35%) + EAAs% (30%) + Leucine (25%) + Protein/serving (10%)
+  [dim]Penalties:[/] High sodium (-5%), High non-protein macros (-5%)
+  [dim]No hard rejections[/] - all brands considered""",
+    
+    "clean": """[bold cyan]CLEAN Mode[/] - Optimized for clean ingredients
+  [dim]Weights:[/] Low sodium (35%) + Low non-protein macros (30%) + EAAs% (15%) + Leucine (10%) + Protein% (10%)
+  [dim]Hard reject:[/] Sodium >250mg, Added sugar present, Amino spiking suspected"""
+}
+
+
+def display_mode_explanation(mode: Optional[str] = None):
+    """Display explanation of scoring logic for a mode."""
+    if mode:
+        console.print(f"\n{MODE_EXPLANATIONS[mode]}\n")
+    else:
+        for m, explanation in MODE_EXPLANATIONS.items():
+            console.print(f"\n{explanation}")
+        console.print("")
+
+
+@cli.command()
+@click.argument("brand", required=False)
+@click.option("--mode", "-m", type=click.Choice(["cut", "bulk", "clean"]), default=None, help="Score for specific mode only")
+@click.option("--verbose", "-v", is_flag=True, help="Show detailed component scores")
+@click.option("--no-explain", is_flag=True, help="Hide scoring logic explanation")
+def score(brand: Optional[str], mode: Optional[str], verbose: bool, no_explain: bool):
+    """Score brands based on scoring_spec.yml.
+    
+    \b
+    Examples:
+      analyse score                    # Score all brands with explanation
+      analyse score muscle_blaze       # Score specific brand
+      analyse score --mode cut         # Score all for cutting
+      analyse score --no-explain       # Hide explanation
+    """
+    from scorer import Scorer, score_all_brands
+    
+    # Show explanation by default
+    if not no_explain:
+        display_mode_explanation(mode)
+    
+    scorer = Scorer()
+    
+    if brand:
+        # Score specific brand
+        json_path = DEFAULT_OUTPUT_DIR / brand / f"{brand}.json"
+        if not json_path.exists():
+            console.print(f"[red]✗ Brand not found: {json_path}[/]")
+            raise click.Abort()
+        
+        scores = scorer.score_brand_from_file(json_path)
+        display_brand_scores(scores, mode, verbose)
+    else:
+        # Score all brands
+        results = score_all_brands(DEFAULT_OUTPUT_DIR)
+        console.print(f"\n[bold]Scoring {len(results)} brands[/]\n")
+        
+        for scores in results:
+            display_brand_scores(scores, mode, verbose)
+            console.print("")
+
+
+
+def display_brand_scores(scores, mode: Optional[str], verbose: bool):
+    """Display scores for a brand."""
+    from scorer import BrandScores
+    
+    modes_to_show = [mode] if mode else ["cut", "bulk", "clean"]
+    
+    # Header with brand name and spiking status
+    spiking_status = "[red]⚠ SPIKING SUSPECTED[/]" if scores.amino_spiking.suspected else ""
+    console.print(Panel(
+        f"[bold]{scores.brand}[/] {spiking_status}",
+        border_style="cyan"
+    ))
+    
+    # Show metrics summary
+    m = scores.metrics
+    console.print(f"  Protein: [green]{m.protein_pct:.1f}%[/] | "
+                  f"Per 100kcal: [green]{m.protein_per_100_kcal:.1f}g[/] | "
+                  f"Leucine: [green]{m.leucine_g_per_serving or 'N/A'}g[/]")
+    
+    if m.eaas_pct:
+        console.print(f"  EAAs: [yellow]{m.eaas_pct*100:.1f}%[/] of protein | "
+                      f"Non-protein macros: [yellow]{m.non_protein_macros_g:.1f}g[/] | "
+                      f"Sodium: [yellow]{m.sodium_mg}mg[/]")
+    
+    # Show amino spiking rules triggered
+    if scores.amino_spiking.triggered_rules:
+        console.print(f"  [dim]Spiking rules: {', '.join(scores.amino_spiking.triggered_rules)}[/]")
+    
+    # Show mode scores
+    table = Table(show_header=True)
+    table.add_column("Mode", style="cyan")
+    table.add_column("Score", justify="right")
+    table.add_column("Status")
+    
+    for m_name in modes_to_show:
+        mode_score = getattr(scores, f"{m_name}_score")
+        if mode_score:
+            if mode_score.hard_rejected:
+                score_str = "[red]REJECTED[/]"
+                status = f"[red]{mode_score.rejection_reason}[/]"
+            else:
+                score_val = mode_score.total_score
+                if score_val >= 0.7:
+                    score_str = f"[green]{score_val:.2f}[/]"
+                elif score_val >= 0.5:
+                    score_str = f"[yellow]{score_val:.2f}[/]"
+                else:
+                    score_str = f"[red]{score_val:.2f}[/]"
+                status = f"[dim]penalty: -{mode_score.penalty_deduction:.2f}[/]" if mode_score.penalty_deduction else ""
+            
+            table.add_row(m_name.upper(), score_str, status)
+    
+    console.print(table)
+    
+    # Verbose: show component scores
+    if verbose:
+        for m_name in modes_to_show:
+            mode_score = getattr(scores, f"{m_name}_score")
+            if mode_score and mode_score.component_scores:
+                console.print(f"\n[dim]{m_name.upper()} components:[/]")
+                for comp, data in mode_score.component_scores.items():
+                    if "contribution" in data:
+                        console.print(f"  {comp}: {data['raw_value']} → {data['normalized']:.2f} × {data['weight']} = {data['contribution']:.3f}")
+                    elif "deduction" in data:
+                        console.print(f"  {comp}: {data['raw_value']} → penalty {data['penalty']:.2f} × {data['weight']} = -{data['deduction']:.3f}")
+
+
+@cli.command()
+@click.option("--mode", "-m", type=click.Choice(["cut", "bulk", "clean"]), default="cut", help="Mode to rank by")
+def leaderboard(mode: str):
+    """Show ranked leaderboard of all brands for a mode.
+    
+    \b
+    Examples:
+      analyse leaderboard              # Leaderboard for cutting (default)
+      analyse leaderboard --mode bulk  # Leaderboard for bulking
+    """
+    from scorer import score_all_brands, get_leaderboard
+    
+    results = score_all_brands(DEFAULT_OUTPUT_DIR)
+    rankings = get_leaderboard(results, mode)
+    
+    console.print(f"\n[bold]🏆 Leaderboard: {mode.upper()} Mode[/]\n")
+    
+    table = Table(show_header=True)
+    table.add_column("Rank", justify="right", style="cyan")
+    table.add_column("Brand")
+    table.add_column("Score", justify="right")
+    table.add_column("Status")
+    
+    for i, (brand, score_val, rejected) in enumerate(rankings, 1):
+        if rejected:
+            rank = "[dim]-[/]"
+            score_str = "[red]REJECTED[/]"
+            status = "[dim]Hard reject[/]"
+        else:
+            rank = f"[bold]{i}[/]" if i <= 3 else str(i)
+            if score_val >= 0.7:
+                score_str = f"[green]{score_val:.3f}[/]"
+            elif score_val >= 0.5:
+                score_str = f"[yellow]{score_val:.3f}[/]"
+            else:
+                score_str = f"[red]{score_val:.3f}[/]"
+            
+            if i == 1:
+                status = "[green]🥇 Best[/]"
+            elif i == 2:
+                status = "[yellow]🥈[/]"
+            elif i == 3:
+                status = "[yellow]🥉[/]"
+            else:
+                status = ""
+        
+        table.add_row(rank, brand, score_str, status)
+    
+    console.print(table)
+
+
 # Entry point
 def main():
     """Main entry point for the CLI."""
