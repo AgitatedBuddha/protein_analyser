@@ -1,0 +1,169 @@
+{
+  "brand": "trunativ",
+  "extraction_timestamp": "2026-01-26T16:44:17.935436",
+  "product_info": {
+    "weight_kg": 0.907,
+    "price_inr": 2799.0,
+    "price_per_kg": 3086.0,
+    "servings_per_pack": 25.2,
+    "price_per_serving": 111.1
+  },
+  "nutrients": {
+    "product_id": "trunativ_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 36,
+      "energy_kcal_per_serving": 140.7,
+      "protein_g_per_serving": 26.39,
+      "carbohydrates_g_per_serving": 3.97,
+      "total_fat_g_per_serving": 2.14,
+      "sodium_mg_per_serving": 94.88
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy",
+          "value_text": "140.70",
+          "unit_text": "Kcal"
+        },
+        {
+          "nutrient_text": "Protein (as is)",
+          "value_text": "26.39",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Carbohydrates",
+          "value_text": "3.97",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Total Sugar",
+          "value_text": "1.65",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Added Sugar",
+          "value_text": "0.00",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Total Fat",
+          "value_text": "2.14",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "SFA",
+          "value_text": "1.82",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Trans Fat",
+          "value_text": "0.10",
+          "unit_text": "gm"
+        },
+        {
+          "nutrient_text": "Cholesterol",
+          "value_text": "59.56",
+          "unit_text": "mg"
+        },
+        {
+          "nutrient_text": "Sodium",
+          "value_text": "94.88",
+          "unit_text": "mg"
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "trunativ_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 12.52,
+        "bcaas": {
+          "total_g": 5.81,
+          "leucine_g": 2.84,
+          "isoleucine_g": 1.53,
+          "valine_g": 1.44
+        },
+        "lysine_g": 2.57,
+        "methionine_g": 0.58,
+        "phenylalanine_g": 0.86,
+        "threonine_g": 1.68,
+        "tryptophan_g": 0.52,
+        "histidine_g": 0.51
+      },
+      "seaas": {
+        "total_g": 4.22,
+        "arginine_g": 0.66,
+        "cysteine_g": 0.63,
+        "glycine_g": 0.48,
+        "proline_g": 1.63,
+        "tyrosine_g": 0.82
+      },
+      "neaas": {
+        "total_g": 10.1,
+        "serine_g": 1.33,
+        "alanine_g": 1.35,
+        "aspartic_acid_g": 2.85,
+        "glutamic_acid_g": 4.57
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Phenylalanine",
+        "Histidine",
+        "Lysine",
+        "Methionine",
+        "Tryptophan",
+        "Essential Amino Acid",
+        "BCAA",
+        "Valine",
+        "Isoleucine",
+        "Leucine",
+        "Threonine"
+      ],
+      "seaas_listed": [
+        "Arginine",
+        "Proline",
+        "Cystine",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Aspartic Acid",
+        "Serine",
+        "Glutamic Acid",
+        "Glycine",
+        "Alanine"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "seaas.total_g=4.220",
+        "neaas.total_g=10.100"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

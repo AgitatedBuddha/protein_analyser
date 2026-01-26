@@ -1,0 +1,263 @@
+{
+  "brand": "truebasics",
+  "extraction_timestamp": "2026-01-26T16:45:23.636047",
+  "product_info": {
+    "weight_kg": 1.0,
+    "price_inr": 2399.0,
+    "price_per_kg": 2399.0,
+    "servings_per_pack": 28.6,
+    "price_per_serving": 83.96
+  },
+  "nutrients": {
+    "product_id": "truebasics_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 35.0,
+      "energy_kcal_per_serving": 138.25,
+      "protein_g_per_serving": 28.0,
+      "carbohydrates_g_per_serving": 2.62,
+      "total_fat_g_per_serving": 1.75,
+      "sodium_mg_per_serving": 60.2
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy (kcal)",
+          "value_text": "395",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "80",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrate (g)",
+          "value_text": "7.5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugars (g)",
+          "value_text": "5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugars (9)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty Acids (g)",
+          "value_text": "4.21",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty Acids (g)",
+          "value_text": "<0.01",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "189",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "172",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Essential Amino Acids (EAAs) (g)",
+          "value_text": "37.60",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Branched Chain Amino Acids (BCAAs) (9)",
+          "value_text": "17.65",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Semi Essential Amino Acids (SEAAs) (g)",
+          "value_text": "12.15",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Non Essential Amino Acids (NEAAS) (9)",
+          "value_text": "30.25",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Glutamic Acid (g)",
+          "value_text": "14.02",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Energy (kcal)",
+          "value_text": "138.25",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "28",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrate (g)",
+          "value_text": "2.62",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugars (g)",
+          "value_text": "1.75",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugars (9)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.75",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty Acids (g)",
+          "value_text": "1.47",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty Acids (g)",
+          "value_text": "<0.004",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "66.15",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "60.20",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Essential Amino Acids (EAAs) (g)",
+          "value_text": "13.16",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Branched Chain Amino Acids (BCAAs) (9)",
+          "value_text": "6.18",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Semi Essential Amino Acids (SEAAs) (g)",
+          "value_text": "4.25",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Non Essential Amino Acids (NEAAS) (9)",
+          "value_text": "10.59",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Glutamic Acid (g)",
+          "value_text": "4.91",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": true,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "truebasics_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 13.16,
+        "bcaas": {
+          "total_g": null,
+          "leucine_g": null,
+          "isoleucine_g": null,
+          "valine_g": null
+        },
+        "lysine_g": null,
+        "methionine_g": null,
+        "phenylalanine_g": null,
+        "threonine_g": null,
+        "tryptophan_g": null,
+        "histidine_g": null
+      },
+      "seaas": {
+        "total_g": 4.25,
+        "arginine_g": null,
+        "cysteine_g": null,
+        "glycine_g": null,
+        "proline_g": null,
+        "tyrosine_g": null
+      },
+      "neaas": {
+        "total_g": 10.59,
+        "serine_g": null,
+        "alanine_g": null,
+        "aspartic_acid_g": null,
+        "glutamic_acid_g": null
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Isoleucine",
+        "Leucine",
+        "Valine",
+        "Lysine",
+        "Methionine",
+        "Phenylalanine",
+        "Threonine",
+        "Tryptophan",
+        "Histidine"
+      ],
+      "seaas_listed": [
+        "Arginine",
+        "Cysteine",
+        "Glycine",
+        "Proline",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Serine",
+        "Alanine",
+        "Aspartic Acid",
+        "Glutamic Acid"
+      ],
+      "individual_values_visible": false,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.8,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

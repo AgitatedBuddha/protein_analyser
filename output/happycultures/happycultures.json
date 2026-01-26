@@ -1,0 +1,167 @@
+{
+  "brand": "happycultures",
+  "extraction_timestamp": "2026-01-26T17:09:13.645099",
+  "product_info": {
+    "weight_kg": 0.505,
+    "price_inr": 999.0,
+    "price_per_kg": 1978.22,
+    "servings_per_pack": 14.0,
+    "price_per_serving": 71.22
+  },
+  "nutrients": {
+    "product_id": "happycultures_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 36.0,
+      "energy_kcal_per_serving": 133.0,
+      "protein_g_per_serving": 26.2,
+      "carbohydrates_g_per_serving": 2.7,
+      "total_fat_g_per_serving": 2.1,
+      "sodium_mg_per_serving": 0.0
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy Value",
+          "value_text": "133",
+          "unit_text": "Kcal"
+        },
+        {
+          "nutrient_text": "Protein",
+          "value_text": "26.2",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Carbohydrates",
+          "value_text": "2.7",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Total Sugars",
+          "value_text": "0.0",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Added Sugars",
+          "value_text": "0.0",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Dietary fiber",
+          "value_text": "1.1",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Total Fat",
+          "value_text": "2.1",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Saturated Fat",
+          "value_text": "0.1",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Trans Fat",
+          "value_text": "0.0",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Sodium",
+          "value_text": "0.0",
+          "unit_text": "mg"
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "happycultures_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 10.13,
+        "bcaas": {
+          "total_g": 4.5,
+          "leucine_g": 2.1,
+          "isoleucine_g": 1.31,
+          "valine_g": 1.08
+        },
+        "lysine_g": 1.43,
+        "methionine_g": 0.55,
+        "phenylalanine_g": 1.26,
+        "threonine_g": 1.05,
+        "tryptophan_g": 0.47,
+        "histidine_g": 0.88
+      },
+      "seaas": {
+        "total_g": 6.54,
+        "arginine_g": 1.92,
+        "cysteine_g": 0.53,
+        "glycine_g": 1.16,
+        "proline_g": 1.52,
+        "tyrosine_g": 1.41
+      },
+      "neaas": {
+        "total_g": 9.52,
+        "serine_g": 1.37,
+        "alanine_g": 0.98,
+        "aspartic_acid_g": 2.99,
+        "glutamic_acid_g": 4.18
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Leucine",
+        "Isoleucine",
+        "Valine",
+        "Histidine",
+        "Lysine",
+        "Methionine",
+        "Phenylalanine",
+        "Tryptophan",
+        "Threonine"
+      ],
+      "seaas_listed": [
+        "Arginine",
+        "Cysteine",
+        "Glycine",
+        "Proline",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Alanine",
+        "Aspartic acid",
+        "Glutamic acid",
+        "Serine"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "seaas.total_g=6.540",
+        "neaas.total_g=9.520"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

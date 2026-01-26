@@ -1,0 +1,163 @@
+{
+  "brand": "OriginPlantProtein",
+  "extraction_timestamp": "2026-01-26T17:05:20.497227",
+  "product_info": {
+    "weight_kg": 0.975,
+    "price_inr": 2379.0,
+    "price_per_kg": 2440.0,
+    "servings_per_pack": 30.0,
+    "price_per_serving": 79.3
+  },
+  "nutrients": {
+    "product_id": "OriginPlantProtein_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 32.5,
+      "energy_kcal_per_serving": 121.44,
+      "protein_g_per_serving": 25.0,
+      "carbohydrates_g_per_serving": 4.01,
+      "total_fat_g_per_serving": 0.6,
+      "sodium_mg_per_serving": 230.0
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "ENERGY VALUE (kcal)",
+          "value_text": "121.44",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "PROTEIN (g)",
+          "value_text": "25",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "CARBOHYDRATES (g)",
+          "value_text": "4.01",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "TOTAL SUGARS (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "ADDED SUGARS (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "TOTAL FAT (g)",
+          "value_text": "0.60",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "SATURATED FAT (g)",
+          "value_text": "0.29",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "TRANS FAT (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "CHOLESTEROL (mg)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "SODIUM (mg)",
+          "value_text": "230",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "OriginPlantProtein_aminoacidHere",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 9.1,
+        "bcaas": {
+          "total_g": 4.713,
+          "leucine_g": null,
+          "isoleucine_g": null,
+          "valine_g": null
+        },
+        "lysine_g": null,
+        "methionine_g": null,
+        "phenylalanine_g": null,
+        "threonine_g": null,
+        "tryptophan_g": null,
+        "histidine_g": null
+      },
+      "seaas": {
+        "total_g": 4.1,
+        "arginine_g": null,
+        "cysteine_g": null,
+        "glycine_g": null,
+        "proline_g": null,
+        "tyrosine_g": null
+      },
+      "neaas": {
+        "total_g": 8.1,
+        "serine_g": null,
+        "alanine_g": null,
+        "aspartic_acid_g": null,
+        "glutamic_acid_g": null
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Isoleucine",
+        "Leucine",
+        "Valine",
+        "Lysine",
+        "Methionine",
+        "Phenylalanine",
+        "Threonine",
+        "Tryptophan",
+        "Histidine"
+      ],
+      "seaas_listed": [
+        "Arginine",
+        "Cysteine",
+        "Glycine",
+        "Proline",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Serine",
+        "Alanine",
+        "Aspartic Acid",
+        "Glutamic Acid"
+      ],
+      "individual_values_visible": false,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.8,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

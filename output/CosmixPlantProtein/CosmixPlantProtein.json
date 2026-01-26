@@ -1,0 +1,249 @@
+{
+  "brand": "CosmixPlantProtein",
+  "extraction_timestamp": "2026-01-26T17:01:22.412782",
+  "product_info": {
+    "weight_kg": 1.0,
+    "price_inr": 2122.0,
+    "price_per_kg": 2122.0,
+    "servings_per_pack": 30.3,
+    "price_per_serving": 70.03
+  },
+  "nutrients": {
+    "product_id": "CosmixPlantProtein_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 33,
+      "energy_kcal_per_serving": 118.02,
+      "protein_g_per_serving": 25.67,
+      "carbohydrates_g_per_serving": 3.14,
+      "total_fat_g_per_serving": 0.61,
+      "sodium_mg_per_serving": 144.94
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Total Protein (g)",
+          "value_text": "77.8",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Protein (g)",
+          "value_text": "25.67",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Carbohydrates (g)",
+          "value_text": "9.5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Carbohydrates (g)",
+          "value_text": "3.14",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total sugar (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total sugar (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added sugar (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added sugar (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "9.6",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "3.17",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.85",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "0.61",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated fat (g)",
+          "value_text": "0.7",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated fat (g)",
+          "value_text": "0.23",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans fat (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans fat (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Calcium (mg)",
+          "value_text": "138.56",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Calcium (mg)",
+          "value_text": "45.72",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Iron (mg)",
+          "value_text": "20.22",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Iron (mg)",
+          "value_text": "6.67",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Zinc (mg)",
+          "value_text": "8.1",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Zinc (mg)",
+          "value_text": "2.67",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "439.2",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "144.94",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Potassium (mg)",
+          "value_text": "10.5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Potassium (mg)",
+          "value_text": "3.47",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "CosmixPlantProtein_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 11.226,
+        "bcaas": {
+          "total_g": 4.738,
+          "leucine_g": 2.269,
+          "isoleucine_g": 1.182,
+          "valine_g": 1.287
+        },
+        "lysine_g": 2.063,
+        "methionine_g": 0.914,
+        "phenylalanine_g": 1.452,
+        "threonine_g": 1.264,
+        "tryptophan_g": 0.01,
+        "histidine_g": 0.785
+      },
+      "seaas": {
+        "total_g": 5.993,
+        "arginine_g": 2.204,
+        "cysteine_g": 0.188,
+        "glycine_g": 1.0,
+        "proline_g": 1.535,
+        "tyrosine_g": 1.066
+      },
+      "neaas": {
+        "total_g": 11.222,
+        "serine_g": 1.389,
+        "alanine_g": 1.191,
+        "aspartic_acid_g": 3.293,
+        "glutamic_acid_g": 5.349
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Valine",
+        "Methionine",
+        "Phenylalanine",
+        "Isoleucine",
+        "Leucine",
+        "Lysine",
+        "Threonine",
+        "Histidine",
+        "Tryptophan"
+      ],
+      "seaas_listed": [
+        "Glycine",
+        "Arginine",
+        "Proline",
+        "Tyrosine",
+        "Cystine"
+      ],
+      "neaas_listed": [
+        "Aspartic Acid",
+        "Glutamic Acid",
+        "Serine",
+        "Alanine"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "eaas.bcaas.total_g=4.738",
+        "eaas.total_g=11.226",
+        "seaas.total_g=5.993",
+        "neaas.total_g=11.222"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

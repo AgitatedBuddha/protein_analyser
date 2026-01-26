@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["product_id", "extracted_fields", "raw_evidence", "quality"],
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "extracted_fields": {
+      "type": "object",
+      "required": [
+        "serving_size_g",
+        "energy_kcal_per_serving",
+        "protein_g_per_serving",
+        "carbohydrates_g_per_serving",
+        "total_fat_g_per_serving",
+        "sodium_mg_per_serving"
+      ],
+      "properties": {
+        "serving_size_g": { "type": ["number", "null"] },
+        "energy_kcal_per_serving": { "type": ["number", "null"] },
+        "protein_g_per_serving": { "type": ["number", "null"] },
+        "carbohydrates_g_per_serving": { "type": ["number", "null"] },
+        "total_fat_g_per_serving": { "type": ["number", "null"] },
+        "sodium_mg_per_serving": { "type": ["number", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "raw_evidence": {
+      "type": "object",
+      "required": [
+        "label_basis_detected",
+        "visible_rows",
+        "protein_composition_visible",
+        "protein_composition_notes"
+      ],
+      "properties": {
+        "label_basis_detected": {
+          "type": "string",
+          "enum": ["per_serving", "per_100g", "both", "unknown"]
+        },
+        "visible_rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nutrient_text", "value_text", "unit_text"],
+            "properties": {
+              "nutrient_text": { "type": "string" },
+              "value_text": { "type": ["string", "null"] },
+              "unit_text": { "type": ["string", "null"] },
+              "basis_text": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        },
+        "protein_composition_visible": { "type": "boolean" },
+        "protein_composition_notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "quality": {
+      "type": "object",
+      "required": ["extraction_confidence", "ambiguities", "warnings"],
+      "properties": {
+        "extraction_confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "ambiguities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

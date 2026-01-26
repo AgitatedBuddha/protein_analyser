@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["product_id", "extracted_fields", "raw_evidence", "quality"],
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "extracted_fields": {
+      "type": "object",
+      "required": ["serving_basis", "eaas", "seaas", "neaas"],
+      "properties": {
+        "serving_basis": {
+          "type": "string",
+          "enum": ["per_serving", "per_100g", "unknown"]
+        },
+        "eaas": {
+          "type": "object",
+          "description": "Essential Amino Acids including BCAAs as a subset",
+          "properties": {
+            "total_g": { "type": ["number", "null"] },
+            "bcaas": {
+              "type": "object",
+              "description": "Branched-Chain Amino Acids (subset of EAAs)",
+              "properties": {
+                "total_g": { "type": ["number", "null"] },
+                "leucine_g": { "type": ["number", "null"] },
+                "isoleucine_g": { "type": ["number", "null"] },
+                "valine_g": { "type": ["number", "null"] }
+              },
+              "additionalProperties": false
+            },
+            "lysine_g": { "type": ["number", "null"] },
+            "methionine_g": { "type": ["number", "null"] },
+            "phenylalanine_g": { "type": ["number", "null"] },
+            "threonine_g": { "type": ["number", "null"] },
+            "tryptophan_g": { "type": ["number", "null"] },
+            "histidine_g": { "type": ["number", "null"] }
+          },
+          "additionalProperties": false
+        },
+        "seaas": {
+          "type": "object",
+          "description": "Semi-Essential (Conditionally Essential) Amino Acids",
+          "properties": {
+            "total_g": { "type": ["number", "null"] },
+            "arginine_g": { "type": ["number", "null"] },
+            "cysteine_g": { "type": ["number", "null"] },
+            "glycine_g": { "type": ["number", "null"] },
+            "proline_g": { "type": ["number", "null"] },
+            "tyrosine_g": { "type": ["number", "null"] }
+          },
+          "additionalProperties": false
+        },
+        "neaas": {
+          "type": "object",
+          "description": "Non-Essential Amino Acids",
+          "properties": {
+            "total_g": { "type": ["number", "null"] },
+            "serine_g": { "type": ["number", "null"] },
+            "alanine_g": { "type": ["number", "null"] },
+            "aspartic_acid_g": { "type": ["number", "null"] },
+            "glutamic_acid_g": { "type": ["number", "null"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_evidence": {
+      "type": "object",
+      "required": ["eaas_listed", "seaas_listed", "neaas_listed", "individual_values_visible", "notes"],
+      "properties": {
+        "eaas_listed": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "seaas_listed": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "neaas_listed": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "individual_values_visible": { "type": "boolean" },
+        "notes": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "quality": {
+      "type": "object",
+      "required": ["extraction_confidence", "ambiguities", "warnings"],
+      "properties": {
+        "extraction_confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "ambiguities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "computed_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

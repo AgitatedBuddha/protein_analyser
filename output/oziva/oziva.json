@@ -1,0 +1,208 @@
+{
+  "brand": "oziva",
+  "extraction_timestamp": "2026-01-26T17:03:38.557504",
+  "product_info": {
+    "weight_kg": 0.5,
+    "price_inr": 1299.0,
+    "price_per_kg": 2598.0,
+    "servings_per_pack": 13.9,
+    "price_per_serving": 93.53
+  },
+  "nutrients": {
+    "product_id": "oziva_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 36,
+      "energy_kcal_per_serving": 139.0,
+      "protein_g_per_serving": 30.0,
+      "carbohydrates_g_per_serving": 3.82,
+      "total_fat_g_per_serving": 0.64,
+      "sodium_mg_per_serving": 247.0
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy Value (kcal)",
+          "value_text": "386.11",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "83.33",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrate (g)",
+          "value_text": "10.61",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugars (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugars (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "8.47",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.78",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fat (g)",
+          "value_text": "0.50",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fat (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "686.11",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Energy Value (kcal)",
+          "value_text": "139.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "30.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrate (g)",
+          "value_text": "3.82",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugars (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugars (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "3.05",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "0.64",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fat (g)",
+          "value_text": "0.18",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fat (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "247.00",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "oziva_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 11.37,
+        "bcaas": {
+          "total_g": 5.2,
+          "leucine_g": null,
+          "isoleucine_g": null,
+          "valine_g": null
+        },
+        "lysine_g": null,
+        "methionine_g": null,
+        "phenylalanine_g": null,
+        "threonine_g": null,
+        "tryptophan_g": null,
+        "histidine_g": null
+      },
+      "seaas": {
+        "total_g": 6.79,
+        "arginine_g": null,
+        "cysteine_g": null,
+        "glycine_g": null,
+        "proline_g": null,
+        "tyrosine_g": null
+      },
+      "neaas": {
+        "total_g": 11.91,
+        "serine_g": null,
+        "alanine_g": null,
+        "aspartic_acid_g": null,
+        "glutamic_acid_g": null
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Essential Amino Acids (EAAs)"
+      ],
+      "seaas_listed": [
+        "Semi - Essential Amino Acids (SEAAs)"
+      ],
+      "neaas_listed": [
+        "Non - Essential Amino Acids (NEAAs)"
+      ],
+      "individual_values_visible": false,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.8,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

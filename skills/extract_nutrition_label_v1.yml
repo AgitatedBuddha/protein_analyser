@@ -1,0 +1,130 @@
+skill:
+  name: extract_nutrition_label_v1
+  description: >
+    Extract nutrition information from an image of a protein powder
+    nutrition label sold in India. Extracts only explicitly visible data.
+    Does not infer, normalize, convert units, or correct inconsistencies.
+  modality: vision
+  version: "1.0"
+
+inputs:
+  product_id:
+    type: string
+    description: Opaque identifier provided by the caller. Returned verbatim.
+  image:
+    type: image
+    description: Image of a nutrition label.
+
+outputs:
+  product_id:
+    type: string
+
+  extracted_fields:
+    type: object
+    properties:
+      serving_size_g:
+        type: number
+        nullable: true
+      energy_kcal_per_serving:
+        type: number
+        nullable: true
+      protein_g_per_serving:
+        type: number
+        nullable: true
+      carbohydrates_g_per_serving:
+        type: number
+        nullable: true
+      total_fat_g_per_serving:
+        type: number
+        nullable: true
+      sodium_mg_per_serving:
+        type: number
+        nullable: true
+    additionalProperties: false
+
+  raw_evidence:
+    type: object
+    properties:
+      label_basis_detected:
+        type: string
+        enum: [per_serving, per_100g, both, unknown]
+
+      visible_rows:
+        type: array
+        items:
+          type: object
+          properties:
+            nutrient_text:
+              type: string
+            value_text:
+              type: string
+            unit_text:
+              type: string
+            basis_text:
+              type: string
+              nullable: true
+          additionalProperties: false
+
+      protein_composition_visible:
+        type: boolean
+      protein_composition_notes:
+        type: string
+    additionalProperties: false
+
+  quality:
+    type: object
+    properties:
+      extraction_confidence:
+        type: number
+        minimum: 0.0
+        maximum: 1.0
+      ambiguities:
+        type: array
+        items:
+          type: string
+      warnings:
+        type: array
+        items:
+          type: string
+    additionalProperties: false
+
+rules:
+  - Do not infer missing values
+  - Do not normalize values
+  - Do not convert units
+  - Do not reconcile inconsistencies
+  - Return null when unsure
+  - Prefer omission over assumption
+  - Ignore %RDA values for numeric extraction
+
+heuristics:
+  serving_size:
+    - Extract only if explicitly labeled
+    - Scoop size without gram equivalent → null
+  nutrition_values:
+    - Prefer per-serving values
+    - Per-100g-only values go to raw_evidence
+  sodium:
+    - Extract only if explicitly labeled as sodium
+    - Do not convert salt
+  protein_composition:
+    - Detect presence only
+    - Do not extract numeric values
+
+confidence_guidelines:
+  constraints:
+    - Missing serving size → confidence ≤ 0.6
+    - Unclear table structure → confidence < 0.4
+
+failure_behavior:
+  - On unreliable extraction:
+      - All numeric fields must be null
+      - extraction_confidence < 0.3
+      - warnings must explain failure
+
+output_constraints:
+  - Output JSON only
+  - Must conform exactly to schema
+  - No extra keys
+  - No markdown
+  - No explanatory text

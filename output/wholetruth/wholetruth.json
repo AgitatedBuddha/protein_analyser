@@ -1,0 +1,177 @@
+{
+  "brand": "wholetruth",
+  "extraction_timestamp": "2026-01-26T16:54:30.035553",
+  "product_info": {
+    "weight_kg": 1.0,
+    "price_inr": 2538.0,
+    "price_per_kg": 2538.0,
+    "servings_per_pack": 28.6,
+    "price_per_serving": 88.83
+  },
+  "nutrients": {
+    "product_id": "wholetruth_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 35,
+      "energy_kcal_per_serving": 135.1,
+      "protein_g_per_serving": 26.5,
+      "carbohydrates_g_per_serving": 3.2,
+      "total_fat_g_per_serving": 1.7,
+      "sodium_mg_per_serving": 65.4
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "energy (kcal #)",
+          "value_text": "386.0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "protein (g)",
+          "value_text": "75.9",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "carbohydrate (g)",
+          "value_text": "9.3",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "total sugars (g)",
+          "value_text": "6.4",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "added sugars (g).",
+          "value_text": "0.0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "dietary fibre (g)",
+          "value_text": "<0.1",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "total fat (g)",
+          "value_text": "5.0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "saturated fat (g)",
+          "value_text": "3.1",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "MUFA + PUFA (g)",
+          "value_text": "1.9",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "trans fat (g)",
+          "value_text": "\u22640.01",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "sodium (mg)",
+          "value_text": "186.9",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "cholesterol (mg)",
+          "value_text": "134.0",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "wholetruth_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 13.4,
+        "bcaas": {
+          "total_g": 6.4,
+          "leucine_g": 2.9,
+          "isoleucine_g": 1.8,
+          "valine_g": 1.7
+        },
+        "lysine_g": 2.8,
+        "methionine_g": 0.5,
+        "phenylalanine_g": 0.9,
+        "threonine_g": 1.9,
+        "tryptophan_g": 0.5,
+        "histidine_g": 0.4
+      },
+      "seaas": {
+        "total_g": 2.9,
+        "arginine_g": 0.7,
+        "cysteine_g": 0.2,
+        "glycine_g": 0.5,
+        "proline_g": 0.7,
+        "tyrosine_g": 0.8
+      },
+      "neaas": {
+        "total_g": 10.3,
+        "serine_g": 1.3,
+        "alanine_g": 1.3,
+        "aspartic_acid_g": 2.9,
+        "glutamic_acid_g": 4.8
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "isoleucine",
+        "leucine",
+        "valine",
+        "lysine",
+        "methionine",
+        "phenylalanine",
+        "threonine",
+        "tryptophan",
+        "histidine"
+      ],
+      "seaas_listed": [
+        "arginine",
+        "cystine",
+        "glycine",
+        "proline",
+        "tyrosine"
+      ],
+      "neaas_listed": [
+        "serine",
+        "alanine",
+        "aspartic acid",
+        "glutamic acid"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "seaas.total_g=2.900",
+        "neaas.total_g=10.300"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

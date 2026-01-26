@@ -1,0 +1,229 @@
+{
+  "brand": "superyou",
+  "extraction_timestamp": "2026-01-26T16:58:07.682019",
+  "product_info": {
+    "weight_kg": 1.0,
+    "price_inr": 2249.0,
+    "price_per_kg": 2249.0,
+    "servings_per_pack": 30.3,
+    "price_per_serving": 74.22
+  },
+  "nutrients": {
+    "product_id": "superyou_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 33,
+      "energy_kcal_per_serving": 131.47,
+      "protein_g_per_serving": 27.0,
+      "carbohydrates_g_per_serving": 2.15,
+      "total_fat_g_per_serving": 1.92,
+      "sodium_mg_per_serving": 44.64
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy (Kcal)",
+          "value_text": "398.38",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "79.41",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrates (g)",
+          "value_text": "6.50",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "5.82",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty acids (g)",
+          "value_text": "0.60",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty acids (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "0.80",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "4.30",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugar (g)",
+          "value_text": "0.10",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugar (Sucrose) (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "124.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Energy (Kcal)",
+          "value_text": "131.47",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "27.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrates (g)",
+          "value_text": "2.15",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.92",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty acids (g)",
+          "value_text": "0.20",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty acids (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "0.26",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "1.42",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugar (g)",
+          "value_text": "0.03",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugar (Sucrose) (g)",
+          "value_text": "0.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "44.64",
+          "unit_text": null
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "superyou_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_100g",
+      "eaas": {
+        "total_g": 36.35,
+        "bcaas": {
+          "total_g": 16.37,
+          "leucine_g": 6.95,
+          "isoleucine_g": 4.42,
+          "valine_g": 5.0
+        },
+        "lysine_g": 7.56,
+        "methionine_g": 0.35,
+        "phenylalanine_g": 4.16,
+        "threonine_g": 4.53,
+        "tryptophan_g": 1.23,
+        "histidine_g": 2.15
+      },
+      "seaas": {
+        "total_g": 16.22,
+        "arginine_g": 5.04,
+        "cysteine_g": 0.53,
+        "glycine_g": 3.54,
+        "proline_g": 3.78,
+        "tyrosine_g": 3.33
+      },
+      "neaas": {
+        "total_g": 28.06,
+        "serine_g": 4.41,
+        "alanine_g": 4.69,
+        "aspartic_acid_g": 8.94,
+        "glutamic_acid_g": 10.02
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Threonine",
+        "Valine",
+        "Leucine",
+        "Lysine",
+        "Methionine",
+        "Phenylalanine",
+        "Isoleucine",
+        "Histidine",
+        "Tryptophan"
+      ],
+      "seaas_listed": [
+        "Proline",
+        "Glycine",
+        "Cystine",
+        "Arginine",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Aspartic Acid",
+        "Serine",
+        "Glutamic Acid",
+        "Alanine"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "eaas.bcaas.total_g=16.370",
+        "eaas.total_g=36.350",
+        "seaas.total_g=16.220",
+        "neaas.total_g=28.060"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

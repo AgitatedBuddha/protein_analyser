@@ -1,0 +1,169 @@
+{
+  "brand": "ON_vanilla",
+  "extraction_timestamp": "2026-01-26T16:59:54.513711",
+  "product_info": {
+    "weight_kg": 0.907,
+    "price_inr": 3199.0,
+    "price_per_kg": 3527.01,
+    "servings_per_pack": 29.3,
+    "price_per_serving": 109.34
+  },
+  "nutrients": {
+    "product_id": "ON_vanilla_nutrients",
+    "profile_type": "nutrients",
+    "extracted_fields": {
+      "serving_size_g": 31,
+      "energy_kcal_per_serving": 121,
+      "protein_g_per_serving": 24,
+      "carbohydrates_g_per_serving": 4,
+      "total_fat_g_per_serving": 1,
+      "sodium_mg_per_serving": 100
+    },
+    "raw_evidence": {
+      "label_basis_detected": "per_serving",
+      "visible_rows": [
+        {
+          "nutrient_text": "Energy",
+          "value_text": "121",
+          "unit_text": "kcal"
+        },
+        {
+          "nutrient_text": "Protein",
+          "value_text": "24",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Carbohydrate^",
+          "value_text": "4",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "-Total Sugars^",
+          "value_text": "1",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "-Added Sugars",
+          "value_text": "og",
+          "unit_text": "og"
+        },
+        {
+          "nutrient_text": "Total Fat",
+          "value_text": "1",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "-Saturated Fat",
+          "value_text": "0.5",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "-Trans fat",
+          "value_text": "0",
+          "unit_text": "g"
+        },
+        {
+          "nutrient_text": "Cholesterol^",
+          "value_text": "45",
+          "unit_text": "mg"
+        },
+        {
+          "nutrient_text": "Sodium",
+          "value_text": "100",
+          "unit_text": "mg"
+        }
+      ],
+      "protein_composition_visible": false,
+      "protein_composition_notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": []
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  },
+  "aminoacids": {
+    "product_id": "ON_vanilla_aminoacid",
+    "profile_type": "aminoacid",
+    "extracted_fields": {
+      "serving_basis": "per_serving",
+      "eaas": {
+        "total_g": 12.1,
+        "bcaas": {
+          "total_g": 5.71,
+          "leucine_g": 2.64,
+          "isoleucine_g": 1.68,
+          "valine_g": 1.39
+        },
+        "lysine_g": 2.38,
+        "methionine_g": 0.49,
+        "phenylalanine_g": 0.76,
+        "threonine_g": 1.75,
+        "tryptophan_g": 0.56,
+        "histidine_g": 0.45
+      },
+      "seaas": {
+        "total_g": 3.77,
+        "arginine_g": 0.56,
+        "cysteine_g": 0.56,
+        "glycine_g": 0.45,
+        "proline_g": 1.46,
+        "tyrosine_g": 0.74
+      },
+      "neaas": {
+        "total_g": 9.55,
+        "serine_g": 1.15,
+        "alanine_g": 1.16,
+        "aspartic_acid_g": 2.79,
+        "glutamic_acid_g": 4.45
+      }
+    },
+    "raw_evidence": {
+      "eaas_listed": [
+        "Histidine",
+        "Isoleucine",
+        "Leucine",
+        "Lysine",
+        "Methionine",
+        "Phenylalanine",
+        "Threonine",
+        "Tryptophan",
+        "Valine"
+      ],
+      "seaas_listed": [
+        "Arginine",
+        "Cystine",
+        "Glycine",
+        "Proline",
+        "Tyrosine"
+      ],
+      "neaas_listed": [
+        "Alanine",
+        "Aspartic acid",
+        "Glutamic Acid",
+        "Serine"
+      ],
+      "individual_values_visible": true,
+      "notes": ""
+    },
+    "quality": {
+      "extraction_confidence": 0.95,
+      "ambiguities": [],
+      "warnings": [],
+      "computed_fields": [
+        "eaas.bcaas.total_g=5.710",
+        "eaas.total_g=12.100",
+        "seaas.total_g=3.770",
+        "neaas.total_g=9.550"
+      ]
+    },
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "valid": true,
+    "validation_errors": []
+  }
+}

@@ -1,0 +1,32 @@
+[project]
+name = "analyser"
+version = "0.1.0"
+description = "Extract nutrition and amino acid information from protein powder labels"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "google-genai>=1.0.0",
+    "jsonschema>=4.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+analyse = "cli:main"
+
+[tool.setuptools]
+packages = ["extractors"]
+py-modules = ["cli"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

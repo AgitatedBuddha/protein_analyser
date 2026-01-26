@@ -1,0 +1,197 @@
+skill:
+  name: extract_aminoacid_profile_v1
+  description: >
+    Extract amino acid composition from an image of a protein powder
+    amino acid profile label. Extracts EAAs, BCAAs, SEAAs, and NEAAs
+    with individual values where visible. Does not infer or normalize.
+  modality: vision
+  version: "1.0"
+
+inputs:
+  product_id:
+    type: string
+    description: Opaque identifier provided by the caller. Returned verbatim.
+  image:
+    type: image
+    description: Image of an amino acid profile label.
+
+outputs:
+  product_id:
+    type: string
+
+  extracted_fields:
+    type: object
+    properties:
+      serving_basis:
+        type: string
+        enum: [per_serving, per_100g, unknown]
+        description: Whether values are per serving or per 100g
+
+      eaas:
+        type: object
+        description: Essential Amino Acids
+        properties:
+          total_g:
+            type: number
+            nullable: true
+          isoleucine_g:
+            type: number
+            nullable: true
+          leucine_g:
+            type: number
+            nullable: true
+          valine_g:
+            type: number
+            nullable: true
+          lysine_g:
+            type: number
+            nullable: true
+          methionine_g:
+            type: number
+            nullable: true
+          phenylalanine_g:
+            type: number
+            nullable: true
+          threonine_g:
+            type: number
+            nullable: true
+          tryptophan_g:
+            type: number
+            nullable: true
+          histidine_g:
+            type: number
+            nullable: true
+        additionalProperties: false
+
+      bcaas_total_g:
+        type: number
+        nullable: true
+        description: Branched-Chain Amino Acids total (subset of EAAs)
+
+      seaas:
+        type: object
+        description: Semi-Essential Amino Acids
+        properties:
+          total_g:
+            type: number
+            nullable: true
+          arginine_g:
+            type: number
+            nullable: true
+          cysteine_g:
+            type: number
+            nullable: true
+          glycine_g:
+            type: number
+            nullable: true
+          proline_g:
+            type: number
+            nullable: true
+          tyrosine_g:
+            type: number
+            nullable: true
+        additionalProperties: false
+
+      neaas:
+        type: object
+        description: Non-Essential Amino Acids
+        properties:
+          total_g:
+            type: number
+            nullable: true
+          serine_g:
+            type: number
+            nullable: true
+          alanine_g:
+            type: number
+            nullable: true
+          aspartic_acid_g:
+            type: number
+            nullable: true
+          glutamic_acid_g:
+            type: number
+            nullable: true
+        additionalProperties: false
+
+    additionalProperties: false
+
+  raw_evidence:
+    type: object
+    properties:
+      eaas_listed:
+        type: array
+        items:
+          type: string
+        description: List of EAA names visible on label
+      seaas_listed:
+        type: array
+        items:
+          type: string
+        description: List of SEAA names visible on label
+      neaas_listed:
+        type: array
+        items:
+          type: string
+        description: List of NEAA names visible on label
+      individual_values_visible:
+        type: boolean
+        description: Whether individual amino acid values are shown
+      notes:
+        type: string
+        description: Any additional observations about the label
+    additionalProperties: false
+
+  quality:
+    type: object
+    properties:
+      extraction_confidence:
+        type: number
+        minimum: 0.0
+        maximum: 1.0
+      ambiguities:
+        type: array
+        items:
+          type: string
+      warnings:
+        type: array
+        items:
+          type: string
+    additionalProperties: false
+
+rules:
+  - Do not infer missing values
+  - Do not normalize values
+  - Do not calculate totals from individuals
+  - Return null when unsure
+  - Prefer omission over assumption
+  - Extract exactly what is visible
+
+heuristics:
+  serving_basis:
+    - Look for "per serving" or "per 100g" header
+    - Default to unknown if unclear
+  bcaas:
+    - BCAAs are Leucine + Isoleucine + Valine
+    - Only extract if explicitly labeled as BCAA total
+  individual_values:
+    - Only extract if numeric values next to amino acid names
+    - Do not extract from bar charts or visual representations
+
+confidence_guidelines:
+  constraints:
+    - Missing serving basis → confidence ≤ 0.7
+    - Only totals visible → confidence ≤ 0.8
+    - Individual values visible → confidence can reach 0.95
+
+failure_behavior:
+  - On unreliable extraction:
+      - All numeric fields must be null
+      - extraction_confidence < 0.3
+      - warnings must explain failure
+
+output_constraints:
+  - Output JSON only
+  - Must conform exactly to schema
+  - No extra keys
+  - No markdown
+  - No explanatory text
