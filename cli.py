@@ -142,11 +142,136 @@ def cli():
     
     \b
     Commands:
-      nutrients   Extract nutrition profile
-      aminoacids  Extract amino acid profile
-      all         Extract both profiles
+      full         Extract full profile (nutrients + amino acids), score, and push
+      nutrients    Extract nutrition profile only
+      aminoacids   Extract amino acid profile only
+      score        Score brands from output files
+      leaderboard  Show ranked leaderboard
     """
     pass
+
+
+# ============================================================================
+# FULL - Extract full profile, score, explain, and optionally push
+# ============================================================================
+
+@cli.command()
+@click.argument("brand_dir", type=click.Path(exists=True))
+@click.option("--provider", "-P", type=click.Choice(["openai", "gemini"]), default="gemini", help="LLM provider")
+@click.option("--model", "-m", default=None, help="Model override")
+@click.option("--weight", "-w", type=float, required=True, help="Product weight in kg")
+@click.option("--price", "-p", type=float, required=True, help="Product price in INR")
+@click.option("--push", is_flag=True, help="Push to Supabase after analysis")
+@click.option("--force", "-f", is_flag=True, help="Overwrite if brand exists in Supabase (requires --push)")
+def full(brand_dir: str, provider: str, model: Optional[str], weight: float, price: float, push: bool, force: bool):
+    """Extract full profile (nutrients + amino acids), score, explain, and optionally push.
+    
+    \b
+    Examples:
+      analyse full images/muscle_blaze -w 1.0 -p 2299           # Local only
+      analyse full images/muscle_blaze -w 1.0 -p 2299 --push    # + Supabase
+      analyse full images/muscle_blaze -w 1.0 -p 2299 --push -f # Force overwrite
+    """
+    # Force requires push
+    if force and not push:
+        raise click.ClickException("--force requires --push to be specified.")
+    
+    # Import dependencies
+    from extractors import ProductInfo
+    from scorer import Scorer
+    from generate_explanations import generate_brand_explanations
+    
+    brand_dir_path = Path(brand_dir)
+    brand_name = brand_dir_path.name
+    
+    console.print(f"\n[bold]Analysing:[/] {brand_name}")
+    console.print(f"[dim]Provider: {provider} | Weight: {weight}kg | Price: ₹{price}[/]\n")
+    
+    try:
+        # Check if brand already exists (if pushing)
+        if push:
+            from db_builder import push_brand, brand_exists, get_supabase_client
+            supabase = get_supabase_client()
+            if brand_exists(supabase, brand_name) and not force:
+                console.print(f"[yellow]⏭️ Brand '{brand_name}' already exists in Supabase. Use --force to overwrite.[/]")
+                return
+        
+        # Step 1: Extract profiles
+        console.print("[cyan]Step 1/4:[/] Extracting nutrition and amino acid profiles...")
+        with console.status(f"[bold green]Extracting profiles for {brand_name}..."):
+            result = extract_brand(brand_dir_path, provider=provider, model=model)
+        
+        # Report what was extracted
+        nutrients_found = result.nutrients is not None
+        amino_found = result.aminoacids is not None
+        if nutrients_found and amino_found:
+            console.print(f"  ✓ Extracted nutrients and amino acids")
+        elif nutrients_found:
+            console.print(f"  ✓ Extracted nutrients")
+            console.print(f"  [yellow]⚠ Amino acid profile not found[/]")
+        elif amino_found:
+            console.print(f"  ✓ Extracted amino acids")
+            console.print(f"  [yellow]⚠ Nutrition profile not found[/]")
+        else:
+            console.print(f"  [red]✗ No profiles found[/]")
+            raise click.Abort()
+        
+        # Add product info
+        product_info = {
+            "weight_kg": weight,
+            "price_inr": price,
+            "price_per_kg": round(price / weight, 2)
+        }
+        
+        if result.nutrients:
+            serving_size_g = result.nutrients.get("extracted_fields", {}).get("serving_size_g")
+            if serving_size_g:
+                servings_per_pack = (weight * 1000) / serving_size_g
+                product_info["servings_per_pack"] = round(servings_per_pack, 1)
+                product_info["price_per_serving"] = round(price / servings_per_pack, 2)
+        
+        result.product_info = ProductInfo(**product_info)
+        
+        # Step 2: Compute scores
+        console.print("[cyan]Step 2/4:[/] Computing scores...")
+        result_dict = result.model_dump()
+        scorer = Scorer()
+        scores = scorer.score_brand(result_dict)
+        console.print(f"  ✓ Computed cut/bulk/clean scores")
+        
+        # Step 3: Generate explanations
+        console.print("[cyan]Step 3/4:[/] Generating AI explanations...")
+        with console.status("[bold green]Generating explanations..."):
+            explanations = generate_brand_explanations(brand_name, result_dict, scores)
+        result_dict["explanations"] = explanations
+        console.print(f"  ✓ Generated explanations for all modes")
+        
+        # Save locally
+        console.print("[cyan]Step 4/4:[/] Saving results...")
+        output_dir = ensure_output_dir(brand_name)
+        output_path = output_dir / f"{brand_name}.json"
+        with open(output_path, "w") as f:
+            json.dump(result_dict, f, indent=2)
+        console.print(f"  ✓ Saved to {output_path}")
+        
+        # Push to Supabase if requested
+        if push:
+            console.print("\n[cyan]Pushing to Supabase...[/]")
+            with console.status(f"[bold green]Pushing {brand_name} to Supabase..."):
+                success, message = push_brand(brand_name, force=force)
+            
+            if success:
+                console.print(f"  ✓ {message}")
+                console.print(f"\n[green]✓ Complete! {brand_name} is now live.[/]")
+            else:
+                console.print(f"  [yellow]⚠ {message}[/]")
+        else:
+            console.print(f"\n[green]✓ Analysis complete![/]")
+            console.print(f"[dim]Use --push to upload to Supabase[/]")
+        
+    except Exception as e:
+        console.print(f"\n[red]✗ Error: {e}[/]")
+        raise click.Abort()
 
 
 # ============================================================================
@@ -245,86 +370,6 @@ def aminoacids(path: str, provider: str, model: Optional[str], output: Optional[
         raise click.Abort()
 
 
-# ============================================================================
-# ALL - Extract both profiles from a brand directory
-# ============================================================================
-
-@cli.command()
-@click.argument("brand_dir", type=click.Path(exists=True))
-@click.option("--provider", "-P", type=click.Choice(["openai", "gemini"]), default="gemini", help="LLM provider")
-@click.option("--model", "-m", default=None, help="Model override")
-@click.option("--output", "-o", type=click.Path(), default=None, help="Custom output path")
-@click.option("--weight", "-w", type=float, default=None, help="Product weight in kg")
-@click.option("--price", "-p", type=float, default=None, help="Product price in INR")
-def all(brand_dir: str, provider: str, model: Optional[str], output: Optional[str], weight: Optional[float], price: Optional[float]):
-    """Extract both nutrition and amino acid profiles from a brand directory.
-    
-    Optionally include --weight (kg) and --price (INR) for value calculations.
-    
-    Output saved to: output/<brand>/<brand>.json
-    """
-    from extractors import ProductInfo
-    
-    brand_dir = Path(brand_dir)
-    brand_name = brand_dir.name
-    
-    console.print(f"\n[bold]Extracting all profiles for:[/] {brand_name}")
-    console.print(f"[dim]Provider: {provider} | Model: {model or 'default'}[/]\n")
-    
-    try:
-        with console.status(f"[bold green]Extracting profiles for {brand_name}..."):
-            result = extract_brand(brand_dir, provider=provider, model=model)
-        
-        # Add product info if weight/price provided
-        if weight is not None or price is not None:
-            product_info = {"weight_kg": weight, "price_inr": price}
-            
-            # Compute derived values
-            if weight and price:
-                product_info["price_per_kg"] = round(price / weight, 2)
-            
-            # Compute servings per pack and price per serving
-            if weight and result.nutrients:
-                serving_size_g = result.nutrients.get("extracted_fields", {}).get("serving_size_g")
-                if serving_size_g:
-                    servings_per_pack = (weight * 1000) / serving_size_g
-                    product_info["servings_per_pack"] = round(servings_per_pack, 1)
-                    
-                    if price:
-                        product_info["price_per_serving"] = round(price / servings_per_pack, 2)
-            
-            result.product_info = ProductInfo(**product_info)
-        
-        display_brand_result(result)
-        
-        # Display product info if available
-        if result.product_info:
-            console.print(f"\n[cyan]Product Info:[/]")
-            if result.product_info.weight_kg:
-                console.print(f"  Weight: {result.product_info.weight_kg} kg")
-            if result.product_info.price_inr:
-                console.print(f"  Price: ₹{result.product_info.price_inr}")
-            if result.product_info.price_per_kg:
-                console.print(f"  Price per kg: ₹{result.product_info.price_per_kg}")
-            if result.product_info.servings_per_pack:
-                console.print(f"  Servings per pack: {result.product_info.servings_per_pack}")
-            if result.product_info.price_per_serving:
-                console.print(f"  Price per serving: ₹{result.product_info.price_per_serving}")
-        
-        # Save to structured output path
-        if output:
-            output_path = Path(output)
-        else:
-            output_dir = ensure_output_dir(brand_name)
-            output_path = output_dir / f"{brand_name}.json"
-        
-        with open(output_path, "w") as f:
-            json.dump(result.model_dump(), f, indent=2)
-        console.print(f"\n[green]✓ Saved to {output_path}[/]")
-        
-    except Exception as e:
-        console.print(f"\n[red]✗ Error: {e}[/]")
-        raise click.Abort()
 
 
 # ============================================================================

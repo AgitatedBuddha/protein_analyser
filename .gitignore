@@ -25,6 +25,7 @@ wheels/
 venv/
 ENV/
 env/
+.env/
 
 # IDE
 .idea/
@@ -51,3 +52,6 @@ htmlcov/
 
 # Local development
 *.log
+
+# SQLite database (replaced by Supabase)
+*.db
