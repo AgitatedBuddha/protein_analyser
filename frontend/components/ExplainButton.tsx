@@ -27,7 +27,7 @@ export default function ExplainButton({ brand, mode }: ExplainButtonProps) {
     setError(null);
 
     try {
-      // First, try to fetch from database (pre-generated)
+      // Fetch pre-generated explanation from Supabase
       const { data, error: dbError } = await supabase
         .from('explanations')
         .select('explanation')
@@ -35,27 +35,14 @@ export default function ExplainButton({ brand, mode }: ExplainButtonProps) {
         .eq('mode', mode)
         .single();
 
-      if (data && !dbError) {
-        setExplanation(data.explanation);
-        setLoading(false);
+      if (dbError || !data) {
+        setError('No explanation available. Run `analyse full` with --push to generate.');
         return;
       }
 
-      // If not in DB, generate on-the-fly via API
-      const response = await fetch('/api/explain', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ brand, mode }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get explanation');
-      }
-
-      const result = await response.json();
-      setExplanation(result.explanation);
+      setExplanation(data.explanation);
     } catch (err) {
-      setError('Failed to generate explanation. Please try again.');
+      setError('Failed to fetch explanation. Please try again.');
       console.error(err);
     } finally {
       setLoading(false);
