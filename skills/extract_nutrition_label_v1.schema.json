@@ -22,7 +22,9 @@
         "protein_g_per_serving": { "type": ["number", "null"] },
         "carbohydrates_g_per_serving": { "type": ["number", "null"] },
         "total_fat_g_per_serving": { "type": ["number", "null"] },
-        "sodium_mg_per_serving": { "type": ["number", "null"] }
+        "sodium_mg_per_serving": { "type": ["number", "null"] },
+        "added_sugar_g_per_serving": { "type": ["number", "null"], "description": "Explicitly labeled 'Added Sugar'" },
+        "heavy_metals_tested": { "type": ["boolean", "null"], "description": "True if label claims heavy metals testing" }
       },
       "additionalProperties": false
     },

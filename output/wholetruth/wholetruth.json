@@ -1,6 +1,6 @@
 {
   "brand": "wholetruth",
-  "extraction_timestamp": "2026-01-26T16:54:30.035553",
+  "extraction_timestamp": "2026-01-30T16:06:01.211285",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2538.0,
@@ -17,29 +17,31 @@
       "protein_g_per_serving": 26.5,
       "carbohydrates_g_per_serving": 3.2,
       "total_fat_g_per_serving": 1.7,
-      "sodium_mg_per_serving": 65.4
+      "sodium_mg_per_serving": 65.4,
+      "added_sugar_g_per_serving": 0.0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
       "visible_rows": [
         {
           "nutrient_text": "energy (kcal #)",
-          "value_text": "386.0",
+          "value_text": "135.1",
           "unit_text": null
         },
         {
           "nutrient_text": "protein (g)",
-          "value_text": "75.9",
+          "value_text": "26.5",
           "unit_text": null
         },
         {
           "nutrient_text": "carbohydrate (g)",
-          "value_text": "9.3",
+          "value_text": "3.2",
           "unit_text": null
         },
         {
           "nutrient_text": "total sugars (g)",
-          "value_text": "6.4",
+          "value_text": "2.2",
           "unit_text": null
         },
         {
@@ -49,37 +51,37 @@
         },
         {
           "nutrient_text": "dietary fibre (g)",
-          "value_text": "<0.1",
+          "value_text": "\u22640.04",
           "unit_text": null
         },
         {
           "nutrient_text": "total fat (g)",
-          "value_text": "5.0",
+          "value_text": "1.7",
           "unit_text": null
         },
         {
           "nutrient_text": "saturated fat (g)",
-          "value_text": "3.1",
+          "value_text": "1.1",
           "unit_text": null
         },
         {
           "nutrient_text": "MUFA + PUFA (g)",
-          "value_text": "1.9",
+          "value_text": "0.6",
           "unit_text": null
         },
         {
           "nutrient_text": "trans fat (g)",
-          "value_text": "\u22640.01",
+          "value_text": "0.0",
           "unit_text": null
         },
         {
           "nutrient_text": "sodium (mg)",
-          "value_text": "186.9",
+          "value_text": "65.4",
           "unit_text": null
         },
         {
           "nutrient_text": "cholesterol (mg)",
-          "value_text": "134.0",
+          "value_text": "46.9",
           "unit_text": null
         }
       ],
@@ -117,10 +119,11 @@
         "histidine_g": 0.4
       },
       "seaas": {
-        "total_g": 2.9,
+        "total_g": null,
         "arginine_g": 0.7,
         "cysteine_g": 0.2,
         "glycine_g": 0.5,
+        "taurine_g": null,
         "proline_g": 0.7,
         "tyrosine_g": 0.8
       },
@@ -165,7 +168,6 @@
       "ambiguities": [],
       "warnings": [],
       "computed_fields": [
-        "seaas.total_g=2.900",
         "neaas.total_g=10.300"
       ]
     },
@@ -173,5 +175,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "Wholetruth scores a decent 68% for cutting because it meets the hard requirements for protein and leucine while providing a good protein percentage. However, the score is not higher because of its non-optimized EAA percentage and likely some penalty related to macros or sodium, impacting the overall weighted score despite its strengths in protein efficiency and leucine content, which are critical for preserving muscle during weight loss.",
+    "bulk": "The wholetruth protein powder receives a BULK score of 52% primarily because its relatively low protein percentage (75.7%) and EAAs percentage (50.6%) weigh heavily against it. While the leucine content (2.9g) is good for muscle protein synthesis, the moderate protein content and EAA profile keep it from achieving a higher score for bulking.",
+    "clean": "The wholetruth brand received a 0% CLEAN score because it was rejected. Although its EAA and Leucine levels are good, the score suggests this product might contain too much sodium or non-protein macros, or it may contain added sugar. Without the sodium value, it's hard to pinpoint the exact reason, but it triggered one of the hard rejects associated with this scoring mode."
   }
 }

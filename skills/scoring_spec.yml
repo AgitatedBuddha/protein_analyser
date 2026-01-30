@@ -1,5 +1,5 @@
 scoring_spec:
-  version: "1.3"
+  version: "1.4"
 
   # ============================
   # Core computed metrics
@@ -28,7 +28,6 @@ scoring_spec:
 
   # ============================
   # Normalization ranges
-  # (all scores ∈ [0,1])
   # ============================
   normalization_ranges:
     protein_pct:
@@ -53,7 +52,7 @@ scoring_spec:
       "40-45%": 0.7
       ">45%": 1.0
 
-    # Used ONLY in CLEAN mode as positive signals
+    # CLEAN-mode positive signals
     sodium_mg:
       "<100": 1.0
       "100-200": 0.6
@@ -66,9 +65,14 @@ scoring_spec:
       "6-8": 0.3
       ">8": 0.0
 
+    # NEW (v1.4): Explicit sugar handling
+    added_sugar_g:
+      "<0.5": 1.0
+      "0.5-2": 0.6
+      ">2": 0.0
+
   # ============================
-  # Penalties (deductions)
-  # Used ONLY in CUT & BULK
+  # Penalties (CUT & BULK only)
   # ============================
   penalties:
     sodium_mg:
@@ -89,6 +93,9 @@ scoring_spec:
       glycine_disproportion:
         condition: glycine_g / protein_g > 0.05
 
+      taurine_present:              # NEW (v1.4)
+        condition: taurine_g > 0
+
       low_eaas:
         condition: eaas_pct < 0.40
 
@@ -103,6 +110,39 @@ scoring_spec:
       min_rules_required: 2
 
     output_flag: amino_spiking_suspected
+
+  # ============================
+  # Label credibility (NEW)
+  # ============================
+  label_credibility:
+    flags:
+      missing_macros: true
+      sodium_reported_zero: true
+      amino_profile_without_macros: true
+
+    effects:
+      bulk:
+        penalty: 0.10        # soft trust penalty
+      clean:
+        hard_reject: true   # transparency required
+      cut:
+        penalty: 0.05
+
+  # ============================
+  # Safety gate (NEW, parallel)
+  # ============================
+  safety_flags:
+    heavy_metals:
+      tested: boolean
+      within_limits: boolean
+
+    enforcement:
+      clean:
+        hard_reject_if_unknown: true
+      bulk:
+        warning_only: true
+      cut:
+        warning_only: true
 
   # ============================
   # Mode-specific scoring
@@ -122,6 +162,7 @@ scoring_spec:
       penalty_weights:
         sodium_mg: 0.10
         non_protein_macros_g: 0.15
+        added_sugar_g: 0.10   # NEW (v1.4)
 
     bulk:
       hard_reject: {}

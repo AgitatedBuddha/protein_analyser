@@ -26,7 +26,7 @@ analyse = "cli:main"
 
 [tool.setuptools]
 packages = ["extractors"]
-py-modules = ["cli", "scorer"]
+py-modules = ["cli", "scorer", "generate_explanations", "db_builder"]
 
 [build-system]
 requires = ["setuptools>=61.0"]

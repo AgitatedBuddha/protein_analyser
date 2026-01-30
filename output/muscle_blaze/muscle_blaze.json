@@ -1,6 +1,6 @@
 {
   "brand": "muscle_blaze",
-  "extraction_timestamp": "2026-01-26T16:57:00.567874",
+  "extraction_timestamp": "2026-01-30T16:03:26.289820",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2299.0,
@@ -17,7 +17,9 @@
       "protein_g_per_serving": 24,
       "carbohydrates_g_per_serving": 2.25,
       "total_fat_g_per_serving": 1.5,
-      "sodium_mg_per_serving": 51.6
+      "sodium_mg_per_serving": 51.6,
+      "added_sugar_g_per_serving": 0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
@@ -28,18 +30,8 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "Energy (kcal)",
-          "value_text": "118.5",
-          "unit_text": null
-        },
-        {
           "nutrient_text": "Protein (g)^",
           "value_text": "80",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Protein (g)^",
-          "value_text": "24",
           "unit_text": null
         },
         {
@@ -48,23 +40,8 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "Carbohydrate (g)",
-          "value_text": "2.25",
-          "unit_text": null
-        },
-        {
           "nutrient_text": "Total Sugars (g)",
           "value_text": "7",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Total Sugars (g)",
-          "value_text": "2.1",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Added Sugars (g)",
-          "value_text": "0",
           "unit_text": null
         },
         {
@@ -78,18 +55,8 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "Total Fat (g)",
-          "value_text": "1.5",
-          "unit_text": null
-        },
-        {
           "nutrient_text": "Saturated Fatty Acids (g)",
           "value_text": "4.21",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Saturated Fatty Acids (g)",
-          "value_text": "1.26",
           "unit_text": null
         },
         {
@@ -98,23 +65,8 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "Mono Unsaturated Fatty Acids (g)",
-          "value_text": "0.23",
-          "unit_text": null
-        },
-        {
           "nutrient_text": "Poly Unsaturated Fatty Acids (g)",
           "value_text": "0.03",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Poly Unsaturated Fatty Acids (g)",
-          "value_text": "0.01",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Trans Fatty Acids (g)",
-          "value_text": "0",
           "unit_text": null
         },
         {
@@ -128,13 +80,63 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "Cholesterol (mg)",
-          "value_text": "56.7",
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "172",
           "unit_text": null
         },
         {
-          "nutrient_text": "Sodium (mg)",
-          "value_text": "172",
+          "nutrient_text": "Energy (kcal)",
+          "value_text": "118.5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)^",
+          "value_text": "24",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Carbohydrate (g)",
+          "value_text": "2.25",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugars (g)",
+          "value_text": "2.1",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugars (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.5",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty Acids (g)",
+          "value_text": "1.26",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Mono Unsaturated Fatty Acids (g)",
+          "value_text": "0.23",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Poly Unsaturated Fatty Acids (g)",
+          "value_text": "0.01",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty Acids (g)",
+          "value_text": "0",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "56.7",
           "unit_text": null
         },
         {
@@ -162,9 +164,9 @@
     "extracted_fields": {
       "serving_basis": "unknown",
       "eaas": {
-        "total_g": 11.28,
+        "total_g": 37.6,
         "bcaas": {
-          "total_g": 5.29,
+          "total_g": 17.65,
           "leucine_g": null,
           "isoleucine_g": null,
           "valine_g": null
@@ -177,15 +179,16 @@
         "histidine_g": null
       },
       "seaas": {
-        "total_g": 3.65,
+        "total_g": 12.15,
         "arginine_g": null,
         "cysteine_g": null,
         "glycine_g": null,
+        "taurine_g": null,
         "proline_g": null,
         "tyrosine_g": null
       },
       "neaas": {
-        "total_g": 9.07,
+        "total_g": 30.25,
         "serine_g": null,
         "alanine_g": null,
         "aspartic_acid_g": null,
@@ -221,7 +224,7 @@
       "notes": ""
     },
     "quality": {
-      "extraction_confidence": 0.7,
+      "extraction_confidence": 0.75,
       "ambiguities": [],
       "warnings": []
     },
@@ -229,5 +232,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "The Muscle Blaze protein powder receives a low CUT score (40%) primarily because the leucine content is missing (N/A). Even with good protein per 100 kcal, high protein percentage, and excellent EAA content, the lack of leucine information significantly penalizes the score according to the CUT mode's weights. Without knowing the leucine content, we can't determine if it meets the 2.2g threshold, a critical factor for muscle preservation during cutting.",
+    "bulk": "The muscle_blaze protein powder received a low bulk score of 28% primarily because leucine per serving data is unavailable, effectively setting leucine to zero for scoring. While the protein percentage and EAA content are excellent, the missing leucine data severely penalized the score due to its 25% weighting in the bulk mode calculation. This makes it difficult to recommend this protein powder for optimal muscle building without knowing the leucine content.",
+    "clean": "The Muscle Blaze protein powder receives a 0% CLEAN score due to a hard reject. It is missing the necessary information about Leucine per serving, preventing a complete evaluation against CLEAN mode's purity and additive avoidance criteria. This lack of leucine data means it cannot be reliably recommended for someone prioritizing a clean protein source."
   }
 }

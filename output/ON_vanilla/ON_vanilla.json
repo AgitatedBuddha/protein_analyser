@@ -1,6 +1,6 @@
 {
   "brand": "ON_vanilla",
-  "extraction_timestamp": "2026-01-26T16:59:54.513711",
+  "extraction_timestamp": "2026-01-30T16:01:37.923392",
   "product_info": {
     "weight_kg": 0.907,
     "price_inr": 3199.0,
@@ -17,7 +17,9 @@
       "protein_g_per_serving": 24,
       "carbohydrates_g_per_serving": 4,
       "total_fat_g_per_serving": 1,
-      "sodium_mg_per_serving": 100
+      "sodium_mg_per_serving": 100,
+      "added_sugar_g_per_serving": 0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
@@ -107,10 +109,11 @@
         "histidine_g": 0.45
       },
       "seaas": {
-        "total_g": 3.77,
+        "total_g": null,
         "arginine_g": 0.56,
         "cysteine_g": 0.56,
         "glycine_g": 0.45,
+        "taurine_g": null,
         "proline_g": 1.46,
         "tyrosine_g": 0.74
       },
@@ -157,7 +160,6 @@
       "computed_fields": [
         "eaas.bcaas.total_g=5.710",
         "eaas.total_g=12.100",
-        "seaas.total_g=3.770",
         "neaas.total_g=9.550"
       ]
     },
@@ -165,5 +167,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "ON_vanilla receives a cut score of 57% primarily because while it meets the hard reject criteria (protein per 100 kcal is good and leucine is adequate), it has room for improvement in overall protein efficiency and amino acid profile. Its protein per 100 kcal and leucine contribute positively, but the moderate protein percentage and reliance on EAAs percentage pulls the score down. This makes it an acceptable but not outstanding choice for cutting.",
+    "bulk": "ON_vanilla received a 44% bulk score primarily due to its moderate protein percentage (77.4%), EAAs (50.4%), and leucine content (2.64g). While there are no hard rejects in bulk mode, the relatively lower percentages in these key areas, compared to potentially higher values in other brands, resulted in a lower overall score for optimizing muscle growth.",
+    "clean": "ON_vanilla received a 0% Clean score due to exceeding the sodium limit. Although it performs well in other areas like leucine and EAAs, the sodium content automatically disqualifies it for those prioritizing purity and minimal additives. This makes it unsuitable for someone in \"clean mode\" focused on avoiding unnecessary ingredients."
   }
 }

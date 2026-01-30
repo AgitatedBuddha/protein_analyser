@@ -46,7 +46,9 @@
             "total_g": { "type": ["number", "null"] },
             "arginine_g": { "type": ["number", "null"] },
             "cysteine_g": { "type": ["number", "null"] },
+            "cysteine_g": { "type": ["number", "null"] },
             "glycine_g": { "type": ["number", "null"] },
+            "taurine_g": { "type": ["number", "null"], "description": "Taurine content if listed" },
             "proline_g": { "type": ["number", "null"] },
             "tyrosine_g": { "type": ["number", "null"] }
           },

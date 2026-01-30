@@ -7,6 +7,7 @@ const routes = [
   { path: '/', label: 'Leaderboard', icon: '🏆' },
   { path: '/nutrients', label: 'Nutrients', icon: '🥗' },
   { path: '/aminoacids', label: 'Amino Acids', icon: '🧬' },
+  { path: '/scoring', label: 'Scoring Logic', icon: '⚖️' },
 ];
 
 export default function Navigation() {

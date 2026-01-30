@@ -27,7 +27,10 @@ You MUST return a single JSON object with EXACTLY this structure:
     "protein_g_per_serving": <number or null>,
     "carbohydrates_g_per_serving": <number or null>,
     "total_fat_g_per_serving": <number or null>,
-    "sodium_mg_per_serving": <number or null>
+    "total_fat_g_per_serving": <number or null>,
+    "sodium_mg_per_serving": <number or null>,
+    "added_sugar_g_per_serving": <number or null>,
+    "heavy_metals_tested": <true/false or null>
   },
   "raw_evidence": {
     "label_basis_detected": "per_serving" | "per_100g" | "unknown",
@@ -49,6 +52,8 @@ EXTRACTION NOTES:
 - Prefer per-serving values
 - If only per-100g values exist, record them only as raw evidence
 - Extract sodium only if explicitly labeled as sodium
+- Look for "Added Sugar" specifically (often indented under Carbohydrates/Sugars). Do not infer from Total Sugar.
+- Check for explicitly stated claims about "Heavy Metals Tested" or "Tested for Heavy Metals".
 - If a protein composition table is visible, mark its presence but do not extract numbers
 - If serving size is unclear or ambiguous, return null and explain in warnings
 
