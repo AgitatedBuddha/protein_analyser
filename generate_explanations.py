@@ -37,6 +37,7 @@ SCORING MODES:
 
 3. CLEAN MODE - Optimizes for purity and avoiding additives
    - Hard reject if: sodium > 250mg OR added sugar OR amino spiking suspected
+   - Safety Flag: Heavy metals testing (Warning only if missing)
    - Weights: low sodium (35%), low non-protein macros (30%), EAAs (15%), leucine (10%), protein_pct (10%)
 
 AMINO SPIKING DETECTION:
@@ -71,7 +72,9 @@ def generate_explanation_from_data(brand_name: str, brand_data: dict, scores, mo
     # Get score info
     mode_score = getattr(scores, f"{mode}_score", None)
     score_val = mode_score.total_score if mode_score else 0
+    score_val = mode_score.total_score if mode_score else 0
     rejected = mode_score.hard_rejected if mode_score else False
+    rejection_reason = mode_score.rejection_reason if mode_score and rejected else None
     
     # Build prompt with available data
     prompt = f"""{SCORING_CONTEXT}
@@ -89,7 +92,9 @@ Leucine per serving: {scores.metrics.leucine_g_per_serving or 'N/A'}g
 Amino spiking suspected: {'Yes' if scores.amino_spiking.suspected else 'No'}
 
 Score: {round(score_val * 100)}%
+Score: {round(score_val * 100)}%
 Rejected: {'Yes' if rejected else 'No'}
+Rejection Reason: {rejection_reason if rejection_reason else 'N/A'}
 
 Provide a concise 2-3 sentence explanation of why this brand got this {mode} score. Focus on the key factors that influenced the score. Be specific about what's good or bad about this product for someone in {mode} mode. Use plain language."""
 
@@ -134,7 +139,9 @@ def generate_explanation(brand: dict, mode: str) -> str:
     model = genai.GenerativeModel("gemini-2.0-flash")
     
     score_key = f"{mode}_score"
+    score_key = f"{mode}_score"
     rejected_key = f"{mode}_rejected"
+    reason_key = f"{mode}_rejection_reason"
     
     prompt = f"""{SCORING_CONTEXT}
 
@@ -151,7 +158,9 @@ Leucine per serving: {brand.get('leucine_g_per_serving', 'N/A')}g
 Amino spiking suspected: {'Yes' if brand.get('amino_spiking_suspected') else 'No'}
 
 Score: {round(brand.get(score_key, 0) * 100)}%
+Score: {round(brand.get(score_key, 0) * 100)}%
 Rejected: {'Yes' if brand.get(rejected_key) else 'No'}
+Rejection Reason: {brand.get(reason_key) if brand.get(rejected_key) else 'N/A'}
 
 Provide a concise 2-3 sentence explanation of why this brand got this {mode} score. Focus on the key factors that influenced the score. Be specific about what's good or bad about this product for someone in {mode} mode. Use plain language."""
 
