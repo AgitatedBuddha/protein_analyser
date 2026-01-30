@@ -41,7 +41,9 @@ You MUST return a single JSON object with EXACTLY this structure:
       "total_g": <number or null>,
       "arginine_g": <number or null>,
       "cysteine_g": <number or null>,
+      "cysteine_g": <number or null>,
       "glycine_g": <number or null>,
+      "taurine_g": <number or null>,
       "proline_g": <number or null>,
       "tyrosine_g": <number or null>
     },

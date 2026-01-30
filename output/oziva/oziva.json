@@ -1,6 +1,6 @@
 {
   "brand": "oziva",
-  "extraction_timestamp": "2026-01-26T17:03:38.557504",
+  "extraction_timestamp": "2026-01-30T16:03:53.271852",
   "product_info": {
     "weight_kg": 0.5,
     "price_inr": 1299.0,
@@ -17,7 +17,9 @@
       "protein_g_per_serving": 30.0,
       "carbohydrates_g_per_serving": 3.82,
       "total_fat_g_per_serving": 0.64,
-      "sodium_mg_per_serving": 247.0
+      "sodium_mg_per_serving": 247.0,
+      "added_sugar_g_per_serving": 0.0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
@@ -171,6 +173,7 @@
         "arginine_g": null,
         "cysteine_g": null,
         "glycine_g": null,
+        "taurine_g": null,
         "proline_g": null,
         "tyrosine_g": null
       },
@@ -183,15 +186,9 @@
       }
     },
     "raw_evidence": {
-      "eaas_listed": [
-        "Essential Amino Acids (EAAs)"
-      ],
-      "seaas_listed": [
-        "Semi - Essential Amino Acids (SEAAs)"
-      ],
-      "neaas_listed": [
-        "Non - Essential Amino Acids (NEAAs)"
-      ],
+      "eaas_listed": [],
+      "seaas_listed": [],
+      "neaas_listed": [],
       "individual_values_visible": false,
       "notes": ""
     },
@@ -204,5 +201,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "The oziva protein powder receives a low CUT score (40%) primarily because its leucine content is missing, effectively resulting in a score of zero for this crucial aspect of the CUT scoring mode (30% weighting). While its protein efficiency (protein per 100 kcal) is good and protein percentage is high, the missing leucine data severely impacts its suitability for preserving muscle during weight loss.",
+    "bulk": "The oziva protein powder received a low bulk score (34%) primarily because it's missing leucine data, heavily impacting its potential for muscle building. While the protein percentage is good (83.3%), the low EAA percentage (37.9%) and missing leucine information significantly hinder its effectiveness for bulking purposes.",
+    "clean": "The Oziva protein powder received a 0% Clean score and was rejected due to its unspecified leucine content per serving. Even though the powder avoids other \"Clean Mode\" pitfalls like high sodium or added sugar, the missing leucine value is a critical deficiency for a protein powder focused on quality and amino acid profile. This makes it unsuitable for those prioritizing a pure and complete protein source."
   }
 }

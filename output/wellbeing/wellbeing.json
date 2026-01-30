@@ -1,6 +1,6 @@
 {
   "brand": "wellbeing",
-  "extraction_timestamp": "2026-01-26T16:46:35.214755",
+  "extraction_timestamp": "2026-01-30T16:05:34.332559",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2398.0,
@@ -17,7 +17,9 @@
       "protein_g_per_serving": 27.1,
       "carbohydrates_g_per_serving": 2.3,
       "total_fat_g_per_serving": 1.8,
-      "sodium_mg_per_serving": 53.3
+      "sodium_mg_per_serving": 53.3,
+      "added_sugar_g_per_serving": 0.0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
@@ -114,12 +116,12 @@
         },
         {
           "nutrient_text": "Total Fat (g)",
-          "value_text": "1.8",
+          "value_text": "18",
           "unit_text": null
         },
         {
           "nutrient_text": "Saturated Fat (g)",
-          "value_text": "1.2",
+          "value_text": "12",
           "unit_text": null
         },
         {
@@ -157,14 +159,14 @@
     "validation_errors": []
   },
   "aminoacids": {
-    "product_id": "wellbeing_aminoacidHere",
+    "product_id": "wellbeing_aminoacid",
     "profile_type": "aminoacid",
     "extracted_fields": {
       "serving_basis": "per_serving",
       "eaas": {
         "total_g": 12.7,
         "bcaas": {
-          "total_g": 6.0,
+          "total_g": 6,
           "leucine_g": 2.8,
           "isoleucine_g": 1.7,
           "valine_g": 1.5
@@ -177,10 +179,11 @@
         "histidine_g": 0.5
       },
       "seaas": {
-        "total_g": 4.1,
+        "total_g": null,
         "arginine_g": 0.7,
         "cysteine_g": 0.6,
         "glycine_g": 0.5,
+        "taurine_g": null,
         "proline_g": 1.6,
         "tyrosine_g": 0.7
       },
@@ -225,7 +228,6 @@
       "ambiguities": [],
       "warnings": [],
       "computed_fields": [
-        "seaas.total_g=4.100",
         "neaas.total_g=10.300"
       ]
     },
@@ -233,5 +235,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "The Wellbeing protein powder achieves a 68% cut score because it provides a decent amount of protein per calorie (20.3g/100kcal) and a good dose of leucine (2.8g), avoiding hard rejection. However, the score could be higher as factors like the moderate EAAs percentage (46.9%) likely held it back, given the weighting of those metrics in the Cut Mode.",
+    "bulk": "The wellbeing protein powder scores a moderate 52% in BULK mode. Its relatively high protein percentage (76.3%) and good leucine content (2.8g) contribute positively. However, the lower EAA percentage (46.9%) and lower protein grams per serving (27.1g) compared to others are holding back the score as it is being built for a bulk mode.",
+    "clean": "The \"wellbeing\" protein powder received a 0% CLEAN score and was rejected, indicating a serious issue. While it avoids added sugar and sodium is not excessively high, **the calculated score suggests a hard reject due to something not listed in the initial data.** It is possible that **the specific sodium content is higher than 250 mg** that led to the hard rejection."
   }
 }

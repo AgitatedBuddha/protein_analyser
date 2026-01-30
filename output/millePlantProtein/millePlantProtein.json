@@ -1,6 +1,6 @@
 {
   "brand": "millePlantProtein",
-  "extraction_timestamp": "2026-01-26T17:02:40.231376",
+  "extraction_timestamp": "2026-01-30T16:03:03.191006",
   "product_info": {
     "weight_kg": 0.5,
     "price_inr": 1436.0,
@@ -17,65 +17,67 @@
       "protein_g_per_serving": 30.6,
       "carbohydrates_g_per_serving": 2.9,
       "total_fat_g_per_serving": 0.8,
-      "sodium_mg_per_serving": 127.7
+      "sodium_mg_per_serving": 127.7,
+      "added_sugar_g_per_serving": 0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
       "visible_rows": [
         {
           "nutrient_text": "Energy",
-          "value_text": "136 kcal",
-          "unit_text": null
+          "value_text": "136",
+          "unit_text": "kcal"
         },
         {
           "nutrient_text": "Protein",
-          "value_text": "30.6 g",
-          "unit_text": null
+          "value_text": "30.6",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Carbohydrate",
-          "value_text": "2.9 g",
-          "unit_text": null
+          "value_text": "2.9",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Total Sugar",
-          "value_text": "0 g",
-          "unit_text": null
+          "value_text": "0",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Added Sugar",
-          "value_text": "0 g",
-          "unit_text": null
+          "value_text": "0",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Total Fat",
-          "value_text": "0.8 g",
-          "unit_text": null
+          "value_text": "0.8",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Saturated Fat",
-          "value_text": "0 g",
-          "unit_text": null
+          "value_text": "0",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Trans Fat",
-          "value_text": "0 g",
-          "unit_text": null
+          "value_text": "0",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Cholesterol",
-          "value_text": "0 mg",
-          "unit_text": null
+          "value_text": "0",
+          "unit_text": "mg"
         },
         {
           "nutrient_text": "Dietary Fibre",
-          "value_text": "2.3 g",
-          "unit_text": null
+          "value_text": "2.3",
+          "unit_text": "g"
         },
         {
           "nutrient_text": "Sodium",
-          "value_text": "127.7 mg",
-          "unit_text": null
+          "value_text": "127.7",
+          "unit_text": "mg"
         }
       ],
       "protein_composition_visible": false,
@@ -112,10 +114,11 @@
         "histidine_g": 0.8
       },
       "seaas": {
-        "total_g": 6.7,
+        "total_g": null,
         "arginine_g": 2.1,
         "cysteine_g": 0.3,
         "glycine_g": 1.5,
+        "taurine_g": null,
         "proline_g": 1.3,
         "tyrosine_g": 1.5
       },
@@ -140,8 +143,8 @@
         "Methionine"
       ],
       "seaas_listed": [
-        "Cystine",
         "Arginine",
+        "Cystine",
         "Proline",
         "Tyrosine",
         "Glycine"
@@ -161,7 +164,6 @@
       "warnings": [],
       "computed_fields": [
         "eaas.total_g=15.700",
-        "seaas.total_g=6.700",
         "neaas.total_g=10.100"
       ]
     },
@@ -169,5 +171,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "millePlantProtein receives a solid 81% cut score because it provides ample protein per calorie (22.5g/100kcal) and a good dose of leucine (2.9g per serving), both crucial for preserving muscle during weight loss. The high protein percentage (80.5%) and decent EAA content (51.3%) further contribute to a positive score, making it a suitable choice for those in cut mode.",
+    "bulk": "millePlantProtein's Bulk score of 59% indicates a mixed profile. It benefits from a high protein percentage (80.5%) and decent leucine content (2.9g), contributing to muscle building. However, a score of only 51.3% EAAs pulls the score down, as EAAs are a key component for muscle growth.",
+    "clean": "millePlantProtein received a 0% Clean score because it was rejected. The rejection suggests it violates the \"CLEAN MODE\" hard reject criteria: sodium > 250mg OR added sugar OR amino spiking suspected. Since amino spiking is \"No\" and other data points don't include sodium/sugar, its clean score is 0% based on missing key nutritional information."
   }
 }

@@ -19,7 +19,7 @@ BCAAS = ["leucine_g", "isoleucine_g", "valine_g"]
 OTHER_EAAS = ["lysine_g", "methionine_g", "phenylalanine_g", 
               "threonine_g", "tryptophan_g", "histidine_g"]
 
-SEAAS = ["arginine_g", "cysteine_g", "glycine_g", "proline_g", "tyrosine_g"]
+SEAAS = ["arginine_g", "cysteine_g", "glycine_g", "proline_g", "tyrosine_g", "taurine_g"]
 
 NEAAS = ["serine_g", "alanine_g", "aspartic_acid_g", "glutamic_acid_g"]
 

@@ -1,6 +1,6 @@
 {
   "brand": "OriginPlantProtein",
-  "extraction_timestamp": "2026-01-26T17:05:20.497227",
+  "extraction_timestamp": "2026-01-30T16:02:10.756175",
   "product_info": {
     "weight_kg": 0.975,
     "price_inr": 2379.0,
@@ -17,7 +17,9 @@
       "protein_g_per_serving": 25.0,
       "carbohydrates_g_per_serving": 4.01,
       "total_fat_g_per_serving": 0.6,
-      "sodium_mg_per_serving": 230.0
+      "sodium_mg_per_serving": 230.0,
+      "added_sugar_g_per_serving": 0.0,
+      "heavy_metals_tested": null
     },
     "raw_evidence": {
       "label_basis_detected": "per_serving",
@@ -53,12 +55,12 @@
           "unit_text": null
         },
         {
-          "nutrient_text": "SATURATED FAT (g)",
+          "nutrient_text": "- SATURATED FAT (g)",
           "value_text": "0.29",
           "unit_text": null
         },
         {
-          "nutrient_text": "TRANS FAT (g)",
+          "nutrient_text": "- TRANS FAT (g)",
           "value_text": "0",
           "unit_text": null
         },
@@ -87,7 +89,7 @@
     "validation_errors": []
   },
   "aminoacids": {
-    "product_id": "OriginPlantProtein_aminoacidHere",
+    "product_id": "OriginPlantProtein_aminoacid",
     "profile_type": "aminoacid",
     "extracted_fields": {
       "serving_basis": "per_serving",
@@ -111,6 +113,7 @@
         "arginine_g": null,
         "cysteine_g": null,
         "glycine_g": null,
+        "taurine_g": null,
         "proline_g": null,
         "tyrosine_g": null
       },
@@ -159,5 +162,10 @@
     "model": "gemini-2.0-flash",
     "valid": true,
     "validation_errors": []
+  },
+  "explanations": {
+    "cut": "OriginPlantProtein received a low CUT score of 36% primarily because its leucine content is missing, effectively zeroing out the 30% weight assigned to leucine in the CUT scoring mode. While the protein content per calorie (20.6g) is acceptable and it passed hard rejection criteria, the lack of leucine information significantly hurt its score for muscle preservation during weight loss.",
+    "bulk": "OriginPlantProtein received a low bulk score (27%) primarily because its leucine content is unknown (considered zero in the calculation). While the protein percentage (76.9%) is good, the lack of leucine data heavily penalizes the score according to the BULK mode weights, and the EAAs % (36.4%) also underperforms, resulting in the low overall score.",
+    "clean": "OriginPlantProtein received a 0% CLEAN score and was rejected because the leucine content per serving is missing. Since leucine is a component in the weight score, it is required to get a score. Therefore, this brand is not suitable for someone looking for a clean protein powder without knowing the leucine content."
   }
 }

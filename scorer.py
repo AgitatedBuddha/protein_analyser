@@ -30,7 +30,13 @@ class ComputedMetrics:
     non_protein_macros_g: Optional[float] = None
     leucine_g_per_serving: Optional[float] = None
     protein_g_per_serving: Optional[float] = None
+    protein_g_per_serving: Optional[float] = None
     sodium_mg: Optional[float] = None
+    added_sugar_g: Optional[float] = None
+    taurine_g: Optional[float] = None
+    heavy_metals_tested: Optional[bool] = None
+    missing_macros: bool = False
+    sodium_reported_zero: bool = False
 
 
 @dataclass
@@ -95,6 +101,8 @@ class Scorer:
         carbs_g = nutrients.get("carbohydrates_g_per_serving")
         fat_g = nutrients.get("total_fat_g_per_serving")
         sodium_mg = nutrients.get("sodium_mg_per_serving")
+        added_sugar_g = nutrients.get("added_sugar_g_per_serving")
+        heavy_metals_tested = nutrients.get("heavy_metals_tested")
         
         # Get amino acid values
         eaas = aminoacids.get("eaas", {})
@@ -110,7 +118,9 @@ class Scorer:
         eaas_g = eaas.get("total_g")
         bcaas_g = bcaas.get("total_g")
         leucine_g = bcaas.get("leucine_g")
+        leucine_g = bcaas.get("leucine_g")
         glycine_g = seaas.get("glycine_g")
+        taurine_g = seaas.get("taurine_g")
         
         # Apply normalization
         if eaas_g and normalization_factor != 1.0:
@@ -121,6 +131,8 @@ class Scorer:
             leucine_g *= normalization_factor
         if glycine_g and normalization_factor != 1.0:
             glycine_g *= normalization_factor
+        if taurine_g and normalization_factor != 1.0:
+            taurine_g *= normalization_factor
         
         metrics = ComputedMetrics()
         
@@ -144,6 +156,16 @@ class Scorer:
         metrics.leucine_g_per_serving = leucine_g
         metrics.protein_g_per_serving = protein_g
         metrics.sodium_mg = sodium_mg
+        metrics.added_sugar_g = added_sugar_g
+        metrics.taurine_g = taurine_g
+        metrics.heavy_metals_tested = heavy_metals_tested
+        
+        # Check label credibility flags
+        if protein_g is None or carbs_g is None or fat_g is None:
+            metrics.missing_macros = True
+        
+        if sodium_mg is not None and sodium_mg == 0:
+            metrics.sodium_reported_zero = True
         
         return metrics
     
@@ -174,6 +196,10 @@ class Scorer:
         # Rule: eaas_exceed_protein
         if metrics.eaas_pct_raw and metrics.eaas_pct_raw > 1.0:
             result.triggered_rules.append("eaas_exceed_protein")
+            
+        # Rule: taurine_present (NEW v1.4)
+        if metrics.taurine_g and metrics.taurine_g > 0:
+            result.triggered_rules.append("taurine_present")
         
         # Check trigger threshold
         min_rules = self.spiking_rules["trigger"]["min_rules_required"]
@@ -204,6 +230,11 @@ class Scorer:
         
         penalty_ranges = self.penalties.get(metric_name, {})
         if not penalty_ranges:
+            # Fallback: check normalization_ranges and invert (Score 1.0 = Penalty 0.0)
+            norm_ranges = self.normalization_ranges.get(metric_name)
+            if norm_ranges:
+                score = self.normalize_value(metric_name, value)
+                return 1.0 - score
             return 0.0
         
         for range_str, penalty in penalty_ranges.items():
@@ -252,6 +283,56 @@ class Scorer:
                     return True, f"{metric_name} {threshold}"
         
         return False, None
+
+    def _apply_label_credibility_penalties(self, mode: str, metrics: ComputedMetrics) -> float:
+        """Calculate score deduction from label credibility issues."""
+        spec = self.spec.get("label_credibility", {})
+        effects = spec.get("effects", {}).get(mode, {})
+        
+        penalty = 0.0
+        
+        # Check credibility flags
+        flags_triggered = []
+        if metrics.missing_macros:
+            flags_triggered.append("missing_macros")
+        if metrics.sodium_reported_zero:
+            flags_triggered.append("sodium_reported_zero")
+        
+        # Apply mode-specific effects
+        if flags_triggered:
+            # Check for hard reject in clean mode
+            if effects.get("hard_reject") and flags_triggered:
+                # This return logic needs to be handled in score_mode via a separate check
+                # For now, we return 1.0 penalty to simulate hard reject if needed, 
+                # but better to handle rejection explicitly. 
+                # Let's just return the numeric penalty here.
+                pass
+                
+            if "penalty" in effects:
+                penalty += effects["penalty"]
+                
+        return penalty
+
+    def _check_credibility_reject(self, mode: str, metrics: ComputedMetrics) -> bool:
+        """Check if label credibility issues cause a hard reject."""
+        spec = self.spec.get("label_credibility", {})
+        effects = spec.get("effects", {}).get(mode, {})
+        
+        if effects.get("hard_reject"):
+            if metrics.missing_macros or metrics.sodium_reported_zero:
+                return True
+        return False
+
+    def _check_safety_reject(self, mode: str, metrics: ComputedMetrics) -> bool:
+        """Check if safety flags cause a hard reject."""
+        spec = self.spec.get("safety_flags", {})
+        enforcement = spec.get("enforcement", {}).get(mode, {})
+        
+        if enforcement.get("hard_reject_if_unknown"):
+            # If heavy metals tested is None (unknown) or False, reject
+            if not metrics.heavy_metals_tested:
+                return True
+        return False
     
     def score_mode(self, mode: str, metrics: ComputedMetrics, 
                    amino_spiking: AminoSpikingResult) -> ModeScore:
@@ -266,6 +347,24 @@ class Scorer:
                 total_score=0.0,
                 hard_rejected=True,
                 rejection_reason=reason
+            )
+        
+        # Check label credibility hard reject (NEW v1.4)
+        if self._check_credibility_reject(mode, metrics):
+             return ModeScore(
+                mode=mode,
+                total_score=0.0,
+                hard_rejected=True,
+                rejection_reason="label_credibility_issues"
+            )
+
+        # Check safety hard reject (NEW v1.4)
+        if self._check_safety_reject(mode, metrics):
+             return ModeScore(
+                mode=mode,
+                total_score=0.0,
+                hard_rejected=True,
+                rejection_reason="safety_flags_unmet"
             )
         
         # Calculate weighted score
@@ -298,6 +397,17 @@ class Scorer:
                 "deduction": penalty * weight
             }
             total_penalty += penalty * weight
+            
+        # Apply label credibility penalty (NEW v1.4)
+        credibility_penalty = self._apply_label_credibility_penalties(mode, metrics)
+        if credibility_penalty > 0:
+            component_scores["penalty_label_credibility"] = {
+                "raw_value": 1.0,
+                "penalty": credibility_penalty,
+                "weight": 1.0, 
+                "deduction": credibility_penalty
+            }
+            total_penalty += credibility_penalty
         
         # Apply penalty deduction: final = base * (1 - penalty)
         final_score = total_score * (1 - total_penalty)
