@@ -94,6 +94,8 @@ def insert_nutrients(supabase: Client, brand_id: int, data: dict):
         "carbohydrates_g": fields.get("carbohydrates_g_per_serving"),
         "total_fat_g": fields.get("total_fat_g_per_serving"),
         "sodium_mg": fields.get("sodium_mg_per_serving"),
+        "added_sugar_g": fields.get("added_sugar_g_per_serving"),       # NEW
+        "heavy_metals_tested": fields.get("heavy_metals_tested"),       # NEW
         "extraction_confidence": quality.get("extraction_confidence"),
     }
     
