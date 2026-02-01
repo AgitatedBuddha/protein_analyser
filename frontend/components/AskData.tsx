@@ -153,7 +153,7 @@ export default function AskData() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           placeholder="Ask a question about the data..."
-          className="w-full pl-12 pr-4 py-4 bg-gray-900 border border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-lg text-white placeholder-gray-500 transition-all shadow-lg"
+          className="w-full pl-12 pr-4 py-3 md:py-4 bg-gray-900 border border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-base md:text-lg text-white placeholder-gray-500 transition-all shadow-lg"
         />
         <button
           onClick={() => handleSearch()}
@@ -170,7 +170,7 @@ export default function AskData() {
           <button
             key={q}
             onClick={() => handleSearch(q)}
-            className="px-4 py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full text-sm text-gray-300 hover:text-white transition-all whitespace-nowrap"
+            className="px-3 py-1 md:px-4 md:py-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full text-xs md:text-sm text-gray-300 hover:text-white transition-all whitespace-nowrap"
           >
             {q}
           </button>
@@ -243,8 +243,48 @@ export default function AskData() {
             </div>
           )}
 
-          {/* Data Table */}
-          <div className="overflow-x-auto rounded-xl border border-gray-800 bg-gray-900">
+          {/* MOBILE CARD VIEW (Block on Mobile, Hidden on Desktop) */}
+          <div className="grid grid-cols-1 gap-4 md:hidden">
+            {filteredData.map((item) => (
+              <div key={item.id} className="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col gap-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-bold text-white text-lg">{item.brand}</h3>
+                    <p className="text-gray-400 text-sm">₹{item.price_per_serving}/srv</p>
+                  </div>
+                  <div className="flex flex-col items-end">
+                     <span className="text-2xl font-bold text-blue-400">{(item.cut_score * 100).toFixed(0)}%</span>
+                     <span className="text-xs text-gray-500 uppercase">Score</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-2 text-sm bg-gray-950/50 p-2 rounded-lg">
+                  <div className="text-center">
+                    <p className="text-gray-500 text-xs">Protein</p>
+                    <p className="font-medium text-gray-200">{Math.round(item.protein_pct)}%</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-500 text-xs">Leucine</p>
+                    <p className="font-medium text-gray-200">{item.leucine_g || '-'}</p>
+                  </div>
+                  {activeQuery?.sort_by && !['price_per_serving','protein_pct','leucine_g','cut_score'].includes(activeQuery.sort_by) && (
+                    <div className="text-center">
+                       <p className="text-blue-400 text-xs capitalize">{getMetricLabel(activeQuery.sort_by).split(' ')[0]}</p>
+                       <p className="font-medium text-blue-200">
+                         {typeof item[activeQuery.sort_by] === 'number' 
+                           ? Number(item[activeQuery.sort_by]).toLocaleString(undefined, { maximumFractionDigits: 1 })
+                           : String(item[activeQuery.sort_by])
+                         }
+                       </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP TABLE VIEW (Hidden on Mobile, Block on Desktop) */}
+          <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-800 bg-gray-900">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-gray-800 bg-gray-950/50">

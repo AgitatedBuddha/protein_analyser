@@ -15,7 +15,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-1 p-1 bg-gray-800 rounded-lg mb-6">
+    <nav className="flex flex-wrap justify-center gap-2 p-2 bg-gray-800 rounded-lg mb-6">
       {routes.map((route) => (
         <Link
           key={route.path}
