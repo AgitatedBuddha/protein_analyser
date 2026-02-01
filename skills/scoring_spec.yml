@@ -138,7 +138,8 @@ scoring_spec:
 
     enforcement:
       clean:
-        hard_reject_if_unknown: true
+        hard_reject_if_unknown: false
+        warning_only: true
       bulk:
         warning_only: true
       cut:

@@ -82,9 +82,9 @@ export default function ScoringExplanation() {
               <div className="bg-gray-900 p-5 rounded-lg border border-red-900/20">
                 <h3 className="font-bold text-lg mb-2 text-white">☠️ Safety Flags</h3>
                 <p className="text-gray-400 text-sm">
-                  For our <strong>CLEAN</strong> score, we require evidence of <strong>Heavy Metals Testing</strong>. 
+                  For our <strong>CLEAN</strong> score, we check for evidence of <strong>Heavy Metals Testing</strong>. 
                   <br/>
-                  Unknown or untested status results in an immediate <strong>Hard Reject (0% Score)</strong> in Clean mode.
+                  Unknown or untested status results in a <strong>Warning Flag</strong> (previously a hard reject).
                 </p>
               </div>
             </div>
