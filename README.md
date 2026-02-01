@@ -1,7 +1,7 @@
 # Protein Powder Analyser
 
 Extract and compare nutrition data from protein powder labels using LLM-powered image analysis.
-Deployed at - https://protein-analyser-kaol4j45z-agitatedbuddhas-projects.vercel.app/
+- Deployed at - https://protein-analyser-kaol4j45z-agitatedbuddhas-projects.vercel.app/
 
 ## Features
 
