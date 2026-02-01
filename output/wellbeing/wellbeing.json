@@ -1,6 +1,6 @@
 {
   "brand": "wellbeing",
-  "extraction_timestamp": "2026-01-30T16:05:34.332559",
+  "extraction_timestamp": "2026-01-30T16:53:19.515215",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2398.0,
@@ -166,7 +166,7 @@
       "eaas": {
         "total_g": 12.7,
         "bcaas": {
-          "total_g": 6,
+          "total_g": 6.0,
           "leucine_g": 2.8,
           "isoleucine_g": 1.7,
           "valine_g": 1.5
@@ -237,8 +237,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The Wellbeing protein powder achieves a 68% cut score because it provides a decent amount of protein per calorie (20.3g/100kcal) and a good dose of leucine (2.8g), avoiding hard rejection. However, the score could be higher as factors like the moderate EAAs percentage (46.9%) likely held it back, given the weighting of those metrics in the Cut Mode.",
-    "bulk": "The wellbeing protein powder scores a moderate 52% in BULK mode. Its relatively high protein percentage (76.3%) and good leucine content (2.8g) contribute positively. However, the lower EAA percentage (46.9%) and lower protein grams per serving (27.1g) compared to others are holding back the score as it is being built for a bulk mode.",
-    "clean": "The \"wellbeing\" protein powder received a 0% CLEAN score and was rejected, indicating a serious issue. While it avoids added sugar and sodium is not excessively high, **the calculated score suggests a hard reject due to something not listed in the initial data.** It is possible that **the specific sodium content is higher than 250 mg** that led to the hard rejection."
+    "cut": "The Wellbeing protein powder achieves a 68% cut score because it passes all hard rejection criteria with a solid protein efficiency (20.3g protein per 100 kcal) and sufficient leucine (2.8g). This product benefits from a high protein percentage (76.3%) and a decent EAA profile (46.9%), making it a reasonable choice for preserving muscle while cutting, though improving its protein percentage and potentially reducing non-protein macros would improve the score.",
+    "bulk": "The Wellbeing protein powder receives a moderate bulk score of 52% because while its protein content and leucine levels are decent (76.3% and 2.8g respectively), it could benefit from a higher EAA percentage (46.9%) to further maximize muscle protein synthesis. The moderate score indicates there are better options available for those primarily focused on muscle building.",
+    "clean": "Wellbeing protein powder achieved a Clean score of 71% primarily because it avoided hard rejections related to sodium, added sugar, and amino spiking, and has a high EAA% . The score could be further improved by lowering the Non-Protein Macros and Sodium."
   }
 }

@@ -1,6 +1,6 @@
 {
   "brand": "superyou",
-  "extraction_timestamp": "2026-01-30T16:04:18.373384",
+  "extraction_timestamp": "2026-01-30T16:52:02.952121",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2249.0,
@@ -30,8 +30,18 @@
           "unit_text": null
         },
         {
+          "nutrient_text": "Energy (Kcal)",
+          "value_text": "131.47",
+          "unit_text": null
+        },
+        {
           "nutrient_text": "Protein (g)",
           "value_text": "79.41",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Protein (g)",
+          "value_text": "27.00",
           "unit_text": null
         },
         {
@@ -40,13 +50,33 @@
           "unit_text": null
         },
         {
+          "nutrient_text": "Carbohydrates (g)",
+          "value_text": "2.15",
+          "unit_text": null
+        },
+        {
           "nutrient_text": "Total Fat (g)",
           "value_text": "5.82",
           "unit_text": null
         },
         {
+          "nutrient_text": "Total Fat (g)",
+          "value_text": "1.92",
+          "unit_text": null
+        },
+        {
           "nutrient_text": "Saturated Fatty acids (g)",
           "value_text": "0.60",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Saturated Fatty acids (g)",
+          "value_text": "0.20",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Trans Fatty acids (g)",
+          "value_text": "0.00",
           "unit_text": null
         },
         {
@@ -60,13 +90,33 @@
           "unit_text": null
         },
         {
+          "nutrient_text": "Cholesterol (mg)",
+          "value_text": "0.26",
+          "unit_text": null
+        },
+        {
           "nutrient_text": "Dietary Fibre (g)",
           "value_text": "4.30",
           "unit_text": null
         },
         {
+          "nutrient_text": "Dietary Fibre (g)",
+          "value_text": "1.42",
+          "unit_text": null
+        },
+        {
           "nutrient_text": "Total Sugar (g)",
           "value_text": "0.10",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Total Sugar (g)",
+          "value_text": "0.03",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Added Sugar (Sucrose) (g)",
+          "value_text": "0.00",
           "unit_text": null
         },
         {
@@ -77,6 +127,11 @@
         {
           "nutrient_text": "Sodium (mg)",
           "value_text": "124.00",
+          "unit_text": null
+        },
+        {
+          "nutrient_text": "Sodium (mg)",
+          "value_text": "44.64",
           "unit_text": null
         }
       ],
@@ -174,8 +229,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "SuperYou achieved a 63% cut score because it meets the minimum protein and leucine requirements for cutting, but its score is dragged down by relatively average EAA content and protein percentage compared to its calories. Its good protein per 100 kcal and leucine helped it achieve above average score. It doesn't have any red flags regarding amino spiking or excessive sodium.",
-    "bulk": "Superyou's Bulk score of 52% is driven by a decent protein percentage (81.8%) and EAA content (44.4%). However, the relatively lower leucine (2.29g) and the less significant weight placed on the total protein (27g) in the BULK mode formula pull the score down. This protein powder could be better optimized for bulking by increasing the leucine content and focusing on a higher protein percentage.",
-    "clean": "The SuperYou protein powder received a 0% CLEAN score because it exceeds the maximum sodium limit for this mode. This makes it unsuitable for those prioritizing purity and minimal additives in their protein supplement."
+    "cut": "Superyou received a 63% cut score, indicating decent suitability for cutting. It avoids hard rejections thanks to a solid protein-per-100kcal (20.5g) and leucine level (2.29g). While its protein and EAA percentages are beneficial, improvements in these areas could further enhance its effectiveness for preserving muscle during weight loss.",
+    "bulk": "Superyou's Bulk score of 52% suggests a middling performance for muscle building. While the protein percentage (81.8%) and EAAs (44.4%) are good, the relatively low leucine content (2.29g) likely held back the score, given its importance in muscle protein synthesis. The lower weight assigned to protein_g (10%) minimized its impact on the total score.",
+    "clean": "The Superyou protein powder achieves a 70% CLEAN score by avoiding hard rejections like high sodium or added sugars, indicating it's a relatively pure product. However, the score could be higher, likely hampered by factors like its sodium or non-protein macros despite them not being excessively high enough to trigger a hard rejection. Improvement in these areas would significantly boost the score."
   }
 }

@@ -1,6 +1,6 @@
 {
   "brand": "millePlantProtein",
-  "extraction_timestamp": "2026-01-30T16:03:03.191006",
+  "extraction_timestamp": "2026-01-30T16:50:46.771166",
   "product_info": {
     "weight_kg": 0.5,
     "price_inr": 1436.0,
@@ -143,8 +143,8 @@
         "Methionine"
       ],
       "seaas_listed": [
-        "Arginine",
         "Cystine",
+        "Arginine",
         "Proline",
         "Tyrosine",
         "Glycine"
@@ -173,8 +173,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "millePlantProtein receives a solid 81% cut score because it provides ample protein per calorie (22.5g/100kcal) and a good dose of leucine (2.9g per serving), both crucial for preserving muscle during weight loss. The high protein percentage (80.5%) and decent EAA content (51.3%) further contribute to a positive score, making it a suitable choice for those in cut mode.",
-    "bulk": "millePlantProtein's Bulk score of 59% indicates a mixed profile. It benefits from a high protein percentage (80.5%) and decent leucine content (2.9g), contributing to muscle building. However, a score of only 51.3% EAAs pulls the score down, as EAAs are a key component for muscle growth.",
-    "clean": "millePlantProtein received a 0% Clean score because it was rejected. The rejection suggests it violates the \"CLEAN MODE\" hard reject criteria: sodium > 250mg OR added sugar OR amino spiking suspected. Since amino spiking is \"No\" and other data points don't include sodium/sugar, its clean score is 0% based on missing key nutritional information."
+    "cut": "millePlantProtein receives a solid 81% in CUT mode due to its high protein content per calorie (22.5g/100kcal) and sufficient leucine (2.9g), meeting the hard reject criteria and exceeding ideal thresholds. The high protein percentage (80.5%) and good EAA content (51.3%) further contribute to the positive score, making it a suitable option for preserving muscle during weight loss.",
+    "bulk": "millePlantProtein receives a Bulk score of 59% primarily because while it has a decent protein percentage (80.5%) and leucine content (2.9g), it could be higher in Essential Amino Acids (EAAs) for optimal muscle building. The score is brought down by the EAA percentage of 51.3%, which is relatively low considering that this is a key factor for muscle growth during bulking.",
+    "clean": "MillePlantProtein received a Clean score of 71% primarily due to its good macronutrient profile and lack of red flags like high sodium or suspected amino spiking. Its high EAAs and leucine contribute positively, while factors like overall protein percentage and macro composition are considered with lower weight. This makes it a decent choice for someone focused on purity, but there might be room for improvement in minimizing non-protein macronutrients to further boost the score."
   }
 }

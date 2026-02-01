@@ -1,6 +1,6 @@
 {
   "brand": "ON_vanilla",
-  "extraction_timestamp": "2026-01-30T16:01:37.923392",
+  "extraction_timestamp": "2026-01-30T16:49:35.813556",
   "product_info": {
     "weight_kg": 0.907,
     "price_inr": 3199.0,
@@ -169,8 +169,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "ON_vanilla receives a cut score of 57% primarily because while it meets the hard reject criteria (protein per 100 kcal is good and leucine is adequate), it has room for improvement in overall protein efficiency and amino acid profile. Its protein per 100 kcal and leucine contribute positively, but the moderate protein percentage and reliance on EAAs percentage pulls the score down. This makes it an acceptable but not outstanding choice for cutting.",
-    "bulk": "ON_vanilla received a 44% bulk score primarily due to its moderate protein percentage (77.4%), EAAs (50.4%), and leucine content (2.64g). While there are no hard rejects in bulk mode, the relatively lower percentages in these key areas, compared to potentially higher values in other brands, resulted in a lower overall score for optimizing muscle growth.",
-    "clean": "ON_vanilla received a 0% Clean score due to exceeding the sodium limit. Although it performs well in other areas like leucine and EAAs, the sodium content automatically disqualifies it for those prioritizing purity and minimal additives. This makes it unsuitable for someone in \"clean mode\" focused on avoiding unnecessary ingredients."
+    "cut": "ON_vanilla receives a 57% cut score because while it passes the hard reject criteria with sufficient protein per kcal and leucine, its score is weighed down by moderate scores in key areas. The protein content per 100 kcal and the leucine level are good, contributing positively, but other factors didn't stand out enough to push the score higher for optimal cutting. This suggests there might be better options specifically tailored for maximizing weight loss while preserving muscle mass.",
+    "bulk": "ON_vanilla received a bulk score of 44% because while its protein percentage (77.4%), EAAs percentage (50.4%), and leucine content (2.64g) are reasonably good, they aren't exceptional. The lower score also reflects a comparatively small weighting given to the protein grams in this mode. This makes it a decent choice, but not a top performer for maximizing muscle building.",
+    "clean": "ON_vanilla's Clean score of 54% indicates it's not a top choice for purity. While it avoids hard rejections, its moderate sodium and non-protein macro content likely brought the score down. The decent EAAs and leucine content offered only a partial offset to these factors."
   }
 }

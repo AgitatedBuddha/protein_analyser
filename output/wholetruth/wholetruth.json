@@ -1,6 +1,6 @@
 {
   "brand": "wholetruth",
-  "extraction_timestamp": "2026-01-30T16:06:01.211285",
+  "extraction_timestamp": "2026-01-30T16:53:45.705687",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2538.0,
@@ -26,22 +26,22 @@
       "visible_rows": [
         {
           "nutrient_text": "energy (kcal #)",
-          "value_text": "135.1",
+          "value_text": "386.0",
           "unit_text": null
         },
         {
           "nutrient_text": "protein (g)",
-          "value_text": "26.5",
+          "value_text": "75.9",
           "unit_text": null
         },
         {
           "nutrient_text": "carbohydrate (g)",
-          "value_text": "3.2",
+          "value_text": "9.3",
           "unit_text": null
         },
         {
           "nutrient_text": "total sugars (g)",
-          "value_text": "2.2",
+          "value_text": "6.4",
           "unit_text": null
         },
         {
@@ -51,37 +51,37 @@
         },
         {
           "nutrient_text": "dietary fibre (g)",
-          "value_text": "\u22640.04",
+          "value_text": "<0.1",
           "unit_text": null
         },
         {
           "nutrient_text": "total fat (g)",
-          "value_text": "1.7",
+          "value_text": "5.0",
           "unit_text": null
         },
         {
           "nutrient_text": "saturated fat (g)",
-          "value_text": "1.1",
+          "value_text": "3.1",
           "unit_text": null
         },
         {
           "nutrient_text": "MUFA + PUFA (g)",
-          "value_text": "0.6",
+          "value_text": "1.9",
           "unit_text": null
         },
         {
           "nutrient_text": "trans fat (g)",
-          "value_text": "0.0",
+          "value_text": "\u22640.01",
           "unit_text": null
         },
         {
           "nutrient_text": "sodium (mg)",
-          "value_text": "65.4",
+          "value_text": "186.9",
           "unit_text": null
         },
         {
           "nutrient_text": "cholesterol (mg)",
-          "value_text": "46.9",
+          "value_text": "134.0",
           "unit_text": null
         }
       ],
@@ -177,8 +177,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "Wholetruth scores a decent 68% for cutting because it meets the hard requirements for protein and leucine while providing a good protein percentage. However, the score is not higher because of its non-optimized EAA percentage and likely some penalty related to macros or sodium, impacting the overall weighted score despite its strengths in protein efficiency and leucine content, which are critical for preserving muscle during weight loss.",
-    "bulk": "The wholetruth protein powder receives a BULK score of 52% primarily because its relatively low protein percentage (75.7%) and EAAs percentage (50.6%) weigh heavily against it. While the leucine content (2.9g) is good for muscle protein synthesis, the moderate protein content and EAA profile keep it from achieving a higher score for bulking.",
-    "clean": "The wholetruth brand received a 0% CLEAN score because it was rejected. Although its EAA and Leucine levels are good, the score suggests this product might contain too much sodium or non-protein macros, or it may contain added sugar. Without the sodium value, it's hard to pinpoint the exact reason, but it triggered one of the hard rejects associated with this scoring mode."
+    "cut": "The Wholetruth protein powder receives a 68% cut score, indicating a decent but not outstanding option for cutting. It avoids hard rejection due to sufficient protein per 100 kcal (19.6g) and leucine (2.9g). The score is likely driven by its good protein per 100 kcal and leucine content, balanced by potentially less optimal scores in protein percentage and EAAs.",
+    "bulk": "The wholetruth protein powder receives a Bulk score of 52% primarily due to its decent, but not outstanding, protein composition. While the leucine content (2.9g) and protein percentage (75.7%) are good, the relatively moderate EAAs percentage (50.6%) likely pulls the score down, as EAAs are heavily weighted in Bulk mode. To improve the score for bulking, a higher concentration of EAAs would be beneficial.",
+    "clean": "Wholetruth earned a Clean score of 71% primarily due to its good protein quality (high EAAs and Leucine) and lack of hard rejections like high sodium or suspected amino spiking. However, its score could be higher by reducing non-protein macros and further minimizing sodium, as low sodium and minimal non-protein macros are key factors in the Clean scoring mode."
   }
 }

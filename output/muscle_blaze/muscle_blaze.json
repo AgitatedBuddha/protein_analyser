@@ -1,6 +1,6 @@
 {
   "brand": "muscle_blaze",
-  "extraction_timestamp": "2026-01-30T16:03:26.289820",
+  "extraction_timestamp": "2026-01-30T16:51:12.608562",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2299.0,
@@ -164,9 +164,9 @@
     "extracted_fields": {
       "serving_basis": "unknown",
       "eaas": {
-        "total_g": 37.6,
+        "total_g": 11.28,
         "bcaas": {
-          "total_g": 17.65,
+          "total_g": 5.29,
           "leucine_g": null,
           "isoleucine_g": null,
           "valine_g": null
@@ -179,7 +179,7 @@
         "histidine_g": null
       },
       "seaas": {
-        "total_g": 12.15,
+        "total_g": 3.65,
         "arginine_g": null,
         "cysteine_g": null,
         "glycine_g": null,
@@ -188,7 +188,7 @@
         "tyrosine_g": null
       },
       "neaas": {
-        "total_g": 30.25,
+        "total_g": 9.07,
         "serine_g": null,
         "alanine_g": null,
         "aspartic_acid_g": null,
@@ -234,8 +234,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The Muscle Blaze protein powder receives a low CUT score (40%) primarily because the leucine content is missing (N/A). Even with good protein per 100 kcal, high protein percentage, and excellent EAA content, the lack of leucine information significantly penalizes the score according to the CUT mode's weights. Without knowing the leucine content, we can't determine if it meets the 2.2g threshold, a critical factor for muscle preservation during cutting.",
-    "bulk": "The muscle_blaze protein powder received a low bulk score of 28% primarily because leucine per serving data is unavailable, effectively setting leucine to zero for scoring. While the protein percentage and EAA content are excellent, the missing leucine data severely penalized the score due to its 25% weighting in the bulk mode calculation. This makes it difficult to recommend this protein powder for optimal muscle building without knowing the leucine content.",
-    "clean": "The Muscle Blaze protein powder receives a 0% CLEAN score due to a hard reject. It is missing the necessary information about Leucine per serving, preventing a complete evaluation against CLEAN mode's purity and additive avoidance criteria. This lack of leucine data means it cannot be reliably recommended for someone prioritizing a clean protein source."
+    "cut": "Muscle Blaze's CUT score of 40% is primarily hindered by its missing leucine data. While it passes the hard reject criteria for protein per 100 kcal, the unknown leucine content significantly impacts the final score since leucine carries a high weighting (30%) in the CUT mode calculation.",
+    "bulk": "Muscle Blaze's bulk score is low due to a lack of leucine data, which is heavily weighted (25%) in bulk mode. While it has a decent protein percentage (80%) and EAAs percentage (47%), the missing leucine information significantly drags down the score, hindering its ability to effectively contribute to muscle protein synthesis for bulking purposes.",
+    "clean": "Muscle Blaze earns a decent CLEAN score of 73% because it avoids hard rejections, like high sodium or added sugars, and has no suspected amino spiking. However, the missing leucine data and likely moderate sodium/non-protein macros (implied by no rejection but not a higher score) hold back the score, as leucine, low sodium, and low non-protein macros are heavily weighted in the CLEAN mode."
   }
 }

@@ -1,6 +1,6 @@
 {
   "brand": "trunativ",
-  "extraction_timestamp": "2026-01-30T16:05:08.100967",
+  "extraction_timestamp": "2026-01-30T16:52:55.136602",
   "product_info": {
     "weight_kg": 0.907,
     "price_inr": 2799.0,
@@ -169,8 +169,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "Trunativ achieves a decent 65% Cut score due to its acceptable protein per kcal (18.8g) and good leucine content (2.84g), avoiding hard rejection. The score benefits from a respectable protein percentage (73.3%) and EAA percentage (47.4%), but could be higher if the protein efficiency and EAA levels were further optimized for cutting purposes.",
-    "bulk": "Trunativ's bulk score of 52% is driven by its decent protein percentage (73.3%) and leucine content (2.84g), which are good for muscle building. However, its relatively lower EAAs percentage (47.4%) likely pulled the score down, as essential amino acids are crucial for muscle protein synthesis. The protein content per serving (26.39g) and lack of any rejection criteria contribute positively but aren't enough to significantly boost the overall score.",
-    "clean": "Trunativ received a 0% score and was rejected in CLEAN mode, even though it has good protein and leucine values. The hard rejection criteria of CLEAN mode must have been triggered, possibly due to high sodium or added sugar content (although this info isn't provided in the listed stats). Without more information on sodium and added sugar content, we cannot pinpoint the exact cause of the rejection, but the absence of that data in the provided metrics suggests it might be the culprit."
+    "cut": "Trunativ's CUT score of 65% is decent but not exceptional. It avoids hard rejection due to sufficient protein per calorie (18.8g) and Leucine content (2.84g). The moderate protein percentage (73.3%) and EAAs (47.4%), combined with potential penalties for sodium or non-protein macros (not specified), likely pulled the score down from being higher.",
+    "bulk": "Trunativ's bulk score of 52% is likely driven by its decent protein percentage (73.3%) and solid leucine content (2.84g), which contribute positively to muscle growth. However, the lower EAAs percentage (47.4%) likely pulls down the score significantly, as EAAs are crucial for muscle building and weighted heavily in the Bulk mode. While not a bad choice, there are likely better options available for someone looking to maximize muscle growth.",
+    "clean": "Trunativ receives a moderate Clean score (62%) primarily because it avoids hard rejections related to sodium and added sugar, and amino spiking isn't suspected. However, the score is not higher because while it avoids hard rejections, its relatively high non-protein macros and sodium levels impact the score negatively, despite having a decent EAA percentage and leucine content. This powder offers a safe choice regarding additives but isn't the purest option available for those prioritizing a truly clean protein powder."
   }
 }
