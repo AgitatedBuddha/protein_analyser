@@ -1,6 +1,6 @@
 {
   "brand": "millePlantProtein",
-  "extraction_timestamp": "2026-01-30T16:03:03.191006",
+  "extraction_timestamp": "2026-02-01T13:20:00.557635",
   "product_info": {
     "weight_kg": 0.5,
     "price_inr": 1436.0,
@@ -173,8 +173,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "millePlantProtein receives a solid 81% cut score because it provides ample protein per calorie (22.5g/100kcal) and a good dose of leucine (2.9g per serving), both crucial for preserving muscle during weight loss. The high protein percentage (80.5%) and decent EAA content (51.3%) further contribute to a positive score, making it a suitable choice for those in cut mode.",
-    "bulk": "millePlantProtein's Bulk score of 59% indicates a mixed profile. It benefits from a high protein percentage (80.5%) and decent leucine content (2.9g), contributing to muscle building. However, a score of only 51.3% EAAs pulls the score down, as EAAs are a key component for muscle growth.",
-    "clean": "millePlantProtein received a 0% Clean score because it was rejected. The rejection suggests it violates the \"CLEAN MODE\" hard reject criteria: sodium > 250mg OR added sugar OR amino spiking suspected. Since amino spiking is \"No\" and other data points don't include sodium/sugar, its clean score is 0% based on missing key nutritional information."
+    "cut": "millePlantProtein receives a solid 81% cut score because it comfortably exceeds the hard rejection criteria with high protein per calorie (22.5g) and sufficient leucine (2.9g). The high protein percentage (80.5%) and respectable EAA content (51.3%) contribute positively, making it a good choice for preserving muscle while cutting.",
+    "bulk": "The millePlantProtein achieves a 59% bulk score due to its decent protein percentage (80.5%) and good leucine content (2.9g), positively impacting the score. However, its overall bulk score is limited because the EAAs percentage (51.3%) isn't exceptionally high, and the protein content per serving (30.6g) has a relatively low weight in this mode, leading to a moderate overall performance.",
+    "clean": "millePlantProtein achieves a Clean score of 71% because it passes all hard rejections, indicating it's low in sodium and free from added sugar and suspected amino spiking. The moderate score suggests room for improvement in areas like minimizing non-protein macros, potentially improving its ranking in the Clean mode's focus on purity."
   }
 }

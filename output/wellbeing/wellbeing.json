@@ -1,6 +1,6 @@
 {
   "brand": "wellbeing",
-  "extraction_timestamp": "2026-01-30T16:05:34.332559",
+  "extraction_timestamp": "2026-02-01T13:22:17.104017",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2398.0,
@@ -24,66 +24,6 @@
     "raw_evidence": {
       "label_basis_detected": "per_serving",
       "visible_rows": [
-        {
-          "nutrient_text": "Energy Value (kcal)",
-          "value_text": "376.9",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Protein (g)",
-          "value_text": "76.3",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Carbohydrate (g)",
-          "value_text": "6.5",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Total Sugars (g)",
-          "value_text": "28",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Added Sugars (g)",
-          "value_text": "0",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Dietary Fiber (g)",
-          "value_text": "0",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Total Fat (g)",
-          "value_text": "5",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Saturated Fat (g)",
-          "value_text": "3.4",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "MUFA + PUFA (g)",
-          "value_text": "1.5",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Trans Fat (g)",
-          "value_text": "0.1",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Sodium (mg)",
-          "value_text": "150",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Cholesterol (mg)",
-          "value_text": "120",
-          "unit_text": null
-        },
         {
           "nutrient_text": "Energy Value (kcal)",
           "value_text": "133.8",
@@ -237,8 +177,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The Wellbeing protein powder achieves a 68% cut score because it provides a decent amount of protein per calorie (20.3g/100kcal) and a good dose of leucine (2.8g), avoiding hard rejection. However, the score could be higher as factors like the moderate EAAs percentage (46.9%) likely held it back, given the weighting of those metrics in the Cut Mode.",
-    "bulk": "The wellbeing protein powder scores a moderate 52% in BULK mode. Its relatively high protein percentage (76.3%) and good leucine content (2.8g) contribute positively. However, the lower EAA percentage (46.9%) and lower protein grams per serving (27.1g) compared to others are holding back the score as it is being built for a bulk mode.",
-    "clean": "The \"wellbeing\" protein powder received a 0% CLEAN score and was rejected, indicating a serious issue. While it avoids added sugar and sodium is not excessively high, **the calculated score suggests a hard reject due to something not listed in the initial data.** It is possible that **the specific sodium content is higher than 250 mg** that led to the hard rejection."
+    "cut": "The Wellbeing protein powder achieves a 68% CUT score due to its solid protein content per calorie (20.3g/100kcal) and good leucine content (2.8g), avoiding hard rejection. Its score is likely influenced by a good protein percentage (76.3%) and adequate EAA percentage (46.9%), making it a reasonably effective option for preserving muscle during weight loss.",
+    "bulk": "The Wellbeing protein powder receives a modest Bulk score of 52% because while it offers a good protein percentage (76.3%) and sufficient leucine (2.8g), its overall score is brought down by a lower EAA percentage (46.9%). For bulking, a higher EAA percentage would better support muscle protein synthesis, making this product decent but not optimal for serious muscle gain.",
+    "clean": "The wellbeing protein powder achieves a CLEAN score of 71% primarily due to its relatively good macronutrient profile and lack of concerning additives. The absence of suspected amino spiking and acceptable sodium levels prevent a hard rejection, while the decent EAAs % and leucine content contribute positively. However, the score suggests there is room for improvement in further minimizing sodium and non-protein macros to better align with the CLEAN mode's priorities."
   }
 }

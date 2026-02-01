@@ -1,6 +1,6 @@
 {
   "brand": "wholetruth",
-  "extraction_timestamp": "2026-01-30T16:06:01.211285",
+  "extraction_timestamp": "2026-02-01T13:22:37.999246",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2538.0,
@@ -177,8 +177,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "Wholetruth scores a decent 68% for cutting because it meets the hard requirements for protein and leucine while providing a good protein percentage. However, the score is not higher because of its non-optimized EAA percentage and likely some penalty related to macros or sodium, impacting the overall weighted score despite its strengths in protein efficiency and leucine content, which are critical for preserving muscle during weight loss.",
-    "bulk": "The wholetruth protein powder receives a BULK score of 52% primarily because its relatively low protein percentage (75.7%) and EAAs percentage (50.6%) weigh heavily against it. While the leucine content (2.9g) is good for muscle protein synthesis, the moderate protein content and EAA profile keep it from achieving a higher score for bulking.",
-    "clean": "The wholetruth brand received a 0% CLEAN score because it was rejected. Although its EAA and Leucine levels are good, the score suggests this product might contain too much sodium or non-protein macros, or it may contain added sugar. Without the sodium value, it's hard to pinpoint the exact reason, but it triggered one of the hard rejects associated with this scoring mode."
+    "cut": "The wholetruth protein powder received a 68% cut score primarily because it meets the minimum requirements and has decent protein per kcal and leucine content, beneficial for preserving muscle during weight loss. However, the score isn't higher because while meeting the minimum protein per 100kcal requirement, it could be better, and the relative weights of EAAs and protein percentage also contribute to the final score.",
+    "bulk": "The wholetruth protein powder achieved a bulk score of 52% due to a moderate showing across the key metrics. While the leucine content (2.9g) is a positive, the average protein percentage (75.7%) and EAAs percentage (50.6%) likely held the score back, suggesting room for improvement in overall protein quality and concentration for optimal muscle building.",
+    "clean": "The wholetruth protein powder receives a clean score of 71% primarily due to its decent amino acid profile (50.6% EAAs and 2.9g leucine), lack of added sugar, and acceptable sodium levels (not specified, but did not trigger a rejection). While it avoids disqualifying factors, a higher score would require optimizing for lower sodium and non-protein macros to better align with the \"CLEAN\" goal of purity and avoiding additives."
   }
 }

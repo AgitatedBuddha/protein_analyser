@@ -1,6 +1,6 @@
 {
   "brand": "CosmixPlantProtein",
-  "extraction_timestamp": "2026-01-30T16:01:09.031015",
+  "extraction_timestamp": "2026-02-01T13:18:35.475116",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2122.0,
@@ -153,8 +153,8 @@
         "Tryptophan"
       ],
       "seaas_listed": [
-        "Arginine",
         "Glycine",
+        "Arginine",
         "Proline",
         "Tyrosine",
         "Cystine"
@@ -166,7 +166,7 @@
         "Alanine"
       ],
       "individual_values_visible": true,
-      "notes": ""
+      "notes": "Values are in mg"
     },
     "quality": {
       "extraction_confidence": 0.95,
@@ -184,8 +184,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "CosmixPlantProtein achieves a decent Cut score (59%) primarily due to its solid protein content per calorie (21.8g/100kcal) and adequate leucine (2.269g). However, its score is limited by a lower EAAs percentage (43.7%) and likely some penalty for non-protein macros, preventing a higher rating for optimal cutting performance.",
-    "bulk": "The CosmixPlantProtein received a Bulk score of 45% primarily due to its moderately good protein percentage (77.8%) and EAA content (43.7%), which contribute significantly to muscle building. However, the lower leucine content (2.269g) and relatively small contribution of protein grams in the scoring formula held back the final score, suggesting other protein powders would be better for optimal muscle growth.",
-    "clean": "CosmixPlantProtein received a 0% Clean score because it was hard rejected, meaning it did not pass a purity test. Although the amino spiking check passed, the score wasn't provided in order to get the best possible analysis."
+    "cut": "CosmixPlantProtein achieved a Cut score of 59% primarily because it meets the minimum protein and leucine requirements, avoiding hard rejection. However, while the protein per 100 kcal is good, the moderately low EAA percentage and moderate protein percentage likely held the score down, indicating that it could be improved for optimal cutting results.",
+    "bulk": "The CosmixPlantProtein received a low bulk score (45%) primarily because its protein percentage (77.8%) and EAA percentage (43.7%) are relatively low, even though leucine is adequate. While the protein and leucine content are decent, the relatively weaker amino acid profile and overall protein concentration limit its effectiveness for optimal muscle growth, leading to a lower overall score in bulk mode.",
+    "clean": "CosmixPlantProtein achieved a moderate Clean score of 66% because it avoids hard rejections related to sodium and added sugar, and there's no suspicion of amino spiking. However, the score could be higher by improving sodium and non-protein macros content, as these factors are heavily weighted in the Clean scoring mode, with EAAs, leucine, and protein percent being slightly less so."
   }
 }

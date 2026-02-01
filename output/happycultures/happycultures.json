@@ -1,6 +1,6 @@
 {
   "brand": "happycultures",
-  "extraction_timestamp": "2026-01-30T16:02:38.851177",
+  "extraction_timestamp": "2026-02-01T13:19:39.364819",
   "product_info": {
     "weight_kg": 0.505,
     "price_inr": 999.0,
@@ -167,8 +167,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The happycultures protein powder received a 0% cut score due to failing the hard reject criteria: it contains only 2.1g of leucine per serving, falling short of the 2.2g minimum for cut mode. While it has a good protein percentage and protein per 100 kcal, the insufficient leucine makes it unsuitable for preserving muscle during weight loss.",
-    "bulk": "Happycultures' bulk score of 25% is quite low. While it isn't hard rejected, the low EAAs% at 38.7% (weight 30%) and Leucine at 2.1g (weight 25%) significantly drag down the score, as both are crucial for muscle building. Though the protein percentage of 72.8% is decent (weight 35%), it's not enough to overcome the deficiencies in essential amino acids and leucine.",
-    "clean": "happycultures received a 0% clean score because it was rejected due to its leucine content being too low at 2.1g per serving, failing to meet the minimum requirements for a clean protein powder. While it avoids hard rejects like high sodium or added sugar, and is not suspected of amino spiking, the low leucine disqualified it for the clean mode which weighs leucine as a purity factor. Thus, this powder is not suitable for someone prioritizing protein quality and amino acid profile."
+    "cut": "The happycultures protein powder received a 0% CUT score and was rejected because its leucine content (2.1g per serving) fell below the hard reject threshold of 2.2g. Despite having a good protein efficiency (19.7g protein/100 kcal) and protein percentage (72.8%), the insufficient leucine disqualifies it for cutting purposes, as leucine is crucial for preserving muscle mass during weight loss.",
+    "bulk": "The \"happycultures\" protein powder received a low Bulk score (25%) primarily because of its low EAAs percentage (38.7%) and relatively low leucine content (2.1g), despite having a reasonable protein percentage (72.8%). While there were no hard rejects, the lower values in these key muscle-building amino acids significantly dragged down the overall score based on the BULK mode's weighting criteria. For someone bulking, this protein powder is less ideal due to the potentially insufficient levels of building blocks for muscle growth.",
+    "clean": "The happycultures protein powder received a 0% CLEAN score and was rejected due to \"label_credibility_issues,\" implying inaccurate or misleading product information regardless of nutritional content. Even if the label was accurate, the low EAAs % (38.7%) for the stated protein content would likely result in a low CLEAN score, as optimizing for purity and amino acid quality are key priorities in this mode. Therefore, this product is not a good choice for someone prioritizing a clean and trustworthy protein source."
   }
 }

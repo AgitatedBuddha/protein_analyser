@@ -1,6 +1,6 @@
 {
   "brand": "OriginPlantProtein",
-  "extraction_timestamp": "2026-01-30T16:02:10.756175",
+  "extraction_timestamp": "2026-02-01T13:19:19.325332",
   "product_info": {
     "weight_kg": 0.975,
     "price_inr": 2379.0,
@@ -164,8 +164,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "OriginPlantProtein received a low CUT score of 36% primarily because its leucine content is missing, effectively zeroing out the 30% weight assigned to leucine in the CUT scoring mode. While the protein content per calorie (20.6g) is acceptable and it passed hard rejection criteria, the lack of leucine information significantly hurt its score for muscle preservation during weight loss.",
-    "bulk": "OriginPlantProtein received a low bulk score (27%) primarily because its leucine content is unknown (considered zero in the calculation). While the protein percentage (76.9%) is good, the lack of leucine data heavily penalizes the score according to the BULK mode weights, and the EAAs % (36.4%) also underperforms, resulting in the low overall score.",
-    "clean": "OriginPlantProtein received a 0% CLEAN score and was rejected because the leucine content per serving is missing. Since leucine is a component in the weight score, it is required to get a score. Therefore, this brand is not suitable for someone looking for a clean protein powder without knowing the leucine content."
+    "cut": "OriginPlantProtein received a low CUT score (36%) primarily because it's missing leucine data, a critical component for muscle preservation during weight loss. Although it passed the hard reject criteria with a decent protein per 100 kcal (20.6g), the unknown leucine content heavily penalized the final score, as did the low EAA percentage (36.4%), which indicated poor protein quality.",
+    "bulk": "OriginPlantProtein received a low Bulk score of 27% primarily because it's missing a Leucine value. Even with a decent protein percentage (76.9%) and protein content (25g), the missing Leucine, a critical component for muscle building, heavily penalizes the overall score in Bulk Mode where it constitutes 25% of the weighting.",
+    "clean": "OriginPlantProtein received a low CLEAN score of 36% primarily because its EAAs are very low (36.4%). While it avoided hard rejections for high sodium or added sugar, the emphasis on low sodium and relatively low non-protein macros couldn't compensate for the poor EAA profile in this scoring mode, and we are missing the leucine content."
   }
 }

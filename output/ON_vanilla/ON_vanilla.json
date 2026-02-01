@@ -1,6 +1,6 @@
 {
   "brand": "ON_vanilla",
-  "extraction_timestamp": "2026-01-30T16:01:37.923392",
+  "extraction_timestamp": "2026-02-01T13:18:58.342345",
   "product_info": {
     "weight_kg": 0.907,
     "price_inr": 3199.0,
@@ -169,8 +169,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "ON_vanilla receives a cut score of 57% primarily because while it meets the hard reject criteria (protein per 100 kcal is good and leucine is adequate), it has room for improvement in overall protein efficiency and amino acid profile. Its protein per 100 kcal and leucine contribute positively, but the moderate protein percentage and reliance on EAAs percentage pulls the score down. This makes it an acceptable but not outstanding choice for cutting.",
-    "bulk": "ON_vanilla received a 44% bulk score primarily due to its moderate protein percentage (77.4%), EAAs (50.4%), and leucine content (2.64g). While there are no hard rejects in bulk mode, the relatively lower percentages in these key areas, compared to potentially higher values in other brands, resulted in a lower overall score for optimizing muscle growth.",
-    "clean": "ON_vanilla received a 0% Clean score due to exceeding the sodium limit. Although it performs well in other areas like leucine and EAAs, the sodium content automatically disqualifies it for those prioritizing purity and minimal additives. This makes it unsuitable for someone in \"clean mode\" focused on avoiding unnecessary ingredients."
+    "cut": "ON_vanilla receives a 57% cut score, indicating moderate suitability for cutting. The protein content per 100 kcal (19.8g) and leucine content (2.64g) are good and avoid hard rejection. However, the score is likely pulled down by other factors measured in the formula, the specific non-protein macros and sodium content would need to be evaluated to see where penalties were applied.",
+    "bulk": "The ON_vanilla protein powder receives a mediocre Bulk score (44%) primarily due to decent but not outstanding values across key metrics. While the leucine content (2.64g) and EAAs percentage (50.4%) are beneficial, the protein percentage (77.4%) and absolute protein amount (24g) don't stand out significantly enough to drive a higher score according to the defined bulk weights.",
+    "clean": "ON_vanilla's Clean score of 54% indicates moderate purity. While it avoids hard rejections (no excessive sodium or added sugar), its score is pulled down by factors like not being exceptionally low in sodium or non-protein macros, which are heavily weighted in the Clean scoring. While the EAA percentage is decent, the lower score suggests it could be higher for optimal purity."
   }
 }

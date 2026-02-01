@@ -1,6 +1,6 @@
 {
   "brand": "truebasics",
-  "extraction_timestamp": "2026-01-30T16:04:42.725343",
+  "extraction_timestamp": "2026-02-01T13:21:34.733745",
   "product_info": {
     "weight_kg": 1.0,
     "price_inr": 2399.0,
@@ -12,13 +12,13 @@
     "product_id": "truebasics_nutrients",
     "profile_type": "nutrients",
     "extracted_fields": {
-      "serving_size_g": 35,
+      "serving_size_g": 35.0,
       "energy_kcal_per_serving": 138.25,
-      "protein_g_per_serving": 28,
+      "protein_g_per_serving": 28.0,
       "carbohydrates_g_per_serving": 2.62,
       "total_fat_g_per_serving": 1.75,
       "sodium_mg_per_serving": 60.2,
-      "added_sugar_g_per_serving": 0,
+      "added_sugar_g_per_serving": 0.0,
       "heavy_metals_tested": null
     },
     "raw_evidence": {
@@ -26,22 +26,22 @@
       "visible_rows": [
         {
           "nutrient_text": "Energy (kcal)",
-          "value_text": "395",
+          "value_text": "138.25",
           "unit_text": null
         },
         {
           "nutrient_text": "Protein (g)",
-          "value_text": "80",
+          "value_text": "28",
           "unit_text": null
         },
         {
           "nutrient_text": "Carbohydrate (g)",
-          "value_text": "7.5",
+          "value_text": "2.62",
           "unit_text": null
         },
         {
           "nutrient_text": "Total Sugars (g)",
-          "value_text": "5",
+          "value_text": "1.75",
           "unit_text": null
         },
         {
@@ -51,52 +51,27 @@
         },
         {
           "nutrient_text": "Total Fat (g)",
-          "value_text": "5",
+          "value_text": "1.75",
           "unit_text": null
         },
         {
           "nutrient_text": "Saturated Fatty Acids (g)",
-          "value_text": "4.21",
+          "value_text": "1.47",
           "unit_text": null
         },
         {
           "nutrient_text": "Trans Fatty Acids (g)",
-          "value_text": "<0.01",
+          "value_text": "<0.004",
           "unit_text": null
         },
         {
           "nutrient_text": "Cholesterol (mg)",
-          "value_text": "189",
+          "value_text": "66.15",
           "unit_text": null
         },
         {
           "nutrient_text": "Sodium (mg)",
-          "value_text": "172",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Essential Amino Acids (EAAs) (9)",
-          "value_text": "37.60",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Branched Chain Amino Acids (BCAAs) (9)",
-          "value_text": "17.65",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Semi Essential Amino Acids (SEAAs) (g)",
-          "value_text": "12.15",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Non Essential Amino Acids (NEAAS) (9)",
-          "value_text": "30.25",
-          "unit_text": null
-        },
-        {
-          "nutrient_text": "Glutamic Acid (g)",
-          "value_text": "14.02",
+          "value_text": "60.20",
           "unit_text": null
         }
       ],
@@ -189,8 +164,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The TrueBasics protein powder received a low cut score of 39% primarily due to missing leucine data, which is a critical component for muscle preservation during cutting. While the protein content per calorie is excellent (20.3g/100kcal) and the protein percentage is high (80%), the absence of leucine information significantly hinders the score as it's a heavily weighted factor in cut mode (30%). Without leucine data, the algorithm effectively treats the value as zero, severely penalizing the final score.",
-    "bulk": "The truebasics protein powder receives a low BULK score primarily due to its missing leucine value, which is a heavily weighted factor in this mode. While the protein percentage (80%) and EAAs percentage (47%) are decent, the absence of the leucine data significantly hinders the calculation, dragging down the overall score. To improve the bulk score, the brand needs to provide the leucine content per serving.",
-    "clean": "The truebasics protein powder received a 0% Clean score and was rejected because the leucine per serving is missing (\"N/A\"). While the protein percentage, protein per 100kcal, and EAAs percentage are good, the lack of leucine information prevents a proper evaluation and defaults to a failure since leucine is a weighted component."
+    "cut": "The truebasics protein powder received a low cut score (39%) primarily due to the missing leucine data, which severely penalized the score since leucine contributes 30% to the final cut score. While the protein content per 100 kcal is excellent for cutting, the unknown leucine content makes it impossible to determine if the powder meets the minimum requirement of 2.2g per serving for effective muscle preservation during weight loss.",
+    "bulk": "The truebasics protein powder receives a low BULK score (28%) primarily because it lacks leucine data. While it has a good protein percentage (80%) and EAA content (47%), the absence of the leucine value heavily penalizes the score, considering leucine contributes 25% to the overall BULK score.",
+    "clean": "The TrueBasics protein powder achieves a Clean score of 61% due to its moderate levels of sodium and non-protein macros, while providing a decent amount of EAAs. The lack of leucine information hurts the score, as this is a weighted metric even in Clean mode. A consumer optimizing for Clean should note that complete data is required for an ideal product evaluation, and leucine content is worth considering."
   }
 }

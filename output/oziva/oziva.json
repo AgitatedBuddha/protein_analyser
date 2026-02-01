@@ -1,6 +1,6 @@
 {
   "brand": "oziva",
-  "extraction_timestamp": "2026-01-30T16:03:53.271852",
+  "extraction_timestamp": "2026-02-01T13:20:46.800933",
   "product_info": {
     "weight_kg": 0.5,
     "price_inr": 1299.0,
@@ -203,8 +203,8 @@
     "validation_errors": []
   },
   "explanations": {
-    "cut": "The oziva protein powder receives a low CUT score (40%) primarily because its leucine content is missing, effectively resulting in a score of zero for this crucial aspect of the CUT scoring mode (30% weighting). While its protein efficiency (protein per 100 kcal) is good and protein percentage is high, the missing leucine data severely impacts its suitability for preserving muscle during weight loss.",
-    "bulk": "The oziva protein powder received a low bulk score (34%) primarily because it's missing leucine data, heavily impacting its potential for muscle building. While the protein percentage is good (83.3%), the low EAA percentage (37.9%) and missing leucine information significantly hinder its effectiveness for bulking purposes.",
-    "clean": "The Oziva protein powder received a 0% Clean score and was rejected due to its unspecified leucine content per serving. Even though the powder avoids other \"Clean Mode\" pitfalls like high sodium or added sugar, the missing leucine value is a critical deficiency for a protein powder focused on quality and amino acid profile. This makes it unsuitable for those prioritizing a pure and complete protein source."
+    "cut": "Oziva receives a low cut score primarily due to its missing Leucine data, a critical component with a substantial weighting of 30% in the Cut Mode. While the protein content per 100 kcal is excellent at 21.6g and it avoids a hard reject, the lack of Leucine information makes it difficult to assess its suitability for preserving muscle during weight loss, resulting in a low overall score.",
+    "bulk": "The oziva protein powder received a low BULK score (34%) due to its significantly low EAA percentage (37.9%) despite a decent protein percentage (83.3%) and protein content (30g). The missing Leucine data further hinders the score, as it's a heavily weighted component for bulking and it's unknown if it meets the minimum requirement for muscle protein synthesis. Essentially, while it provides a good amount of protein, the low EAA content and missing leucine suggest a lower quality protein source for maximizing muscle growth.",
+    "clean": "Oziva received a low CLEAN score of 38% likely due to its low EAAs percentage of 37.9% and missing Leucine data, which detracts from the protein's quality and effectiveness in this mode. While it avoids hard rejects (low sodium, no added sugar, no suspected amino spiking), the emphasis on purity and quality in the CLEAN mode means that sub-par amino acid profiles are heavily penalized."
   }
 }
