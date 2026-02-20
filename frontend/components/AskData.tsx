@@ -43,6 +43,7 @@ export default function AskData() {
   const [filteredData, setFilteredData] = useState<any[]>([]);
   const [activeQuery, setActiveQuery] = useState<QueryResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [hasSearched, setHasSearched] = useState(false);
 
   // Load all data on mount
   useEffect(() => {
@@ -56,8 +57,8 @@ export default function AskData() {
         setError('Failed to load protein data');
       } else {
         setData(brands || []);
-        // Default view: Top 5 by cut score
-        setFilteredData((brands || []).sort((a, b) => b.cut_score - a.cut_score).slice(0, 5));
+        // Start with an empty view until the user asks a question
+        setFilteredData([]);
       }
     };
     fetchData();
@@ -70,6 +71,7 @@ export default function AskData() {
     setError(null);
     setInput(queryText);
     setActiveQuery(null); // Clear previous
+    setHasSearched(true);
 
     try {
       // 1. Get filter/analysis instructions from LLM
@@ -327,7 +329,7 @@ export default function AskData() {
       )}
       
       {/* Empty State */}
-      {!loading && filteredData.length === 0 && (
+      {!loading && hasSearched && filteredData.length === 0 && (
         <div className="text-center py-12 text-gray-500">
           <p className="text-lg">No brands match your criteria.</p>
           <p className="text-sm mt-2">Try relaxing filters or asking a different question.</p>
